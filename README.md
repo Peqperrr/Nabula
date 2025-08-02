@@ -2,6 +2,22 @@
 
 ### 🌌 NABULA ©️
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<p align="center"> 
+  <a href="https://discord.com/users/592823845673631936">
+    <img src="https://img.shields.io/badge/Discord-Peqperrr%237777-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Discord Badge" />
+     <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+      <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" />
+</a>      
+<p align="center"> 
+  
+  </a>
+  <img src="https://komarev.com/ghpvc/?username=Peqperrr&label=Profile%20Views&color=00ff00&style=flat-square" alt="Peqperrr profile views" />
+<p  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 # **Your Discord Server. Redefined.**
 
 **The blueprint is complete. The build has begun.  
