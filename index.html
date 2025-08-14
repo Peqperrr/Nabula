@@ -8,19 +8,136 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Exo:wght@700&family=Montserrat:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lazer84&family=VT323&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap');
 
-        /* Base styles for font and body */
+        /* Root variables for theming */
+        :root {
+            --bg-color: #000;
+            --main-text-color: #E6F1FF;
+            --main-accent-color: #00F6FF;
+            --main-primary-color: #00F6FF;
+            --main-secondary-color: #F72585;
+            --embed-bg: rgba(10, 15, 20, 0.85);
+            --embed-border-color-1: #00F6FF;
+            --embed-border-color-2: #00FFFF;
+            --embed-border-color-3: #F72585;
+            --embed-border-color-4: #E6F1FF;
+            --glow-color: #00F6FF;
+            --progress-bg: #2d3748;
+            --progress-bar-start: #00F6FF;
+            --progress-bar-end: #F72585;
+            --font-family-main: 'Inter', sans-serif;
+            --font-family-title: 'Orbitron', sans-serif;
+            --heading-color: #ffffff;
+            --heading-glow-color: #00bfff;
+        }
+
+        /* Theme: NeoDark */
+        body.theme-neodark {
+            --main-primary-color: #00F6FF;
+            --main-secondary-color: #F72585;
+            --main-accent-color: #00F6FF;
+            --main-text-color: #E6F1FF;
+            --embed-bg: rgba(10, 15, 20, 0.85);
+            --embed-border-color-1: #00F6FF;
+            --embed-border-color-2: #00FFFF;
+            --embed-border-color-3: #F72585;
+            --embed-border-color-4: #E6F1FF;
+            --glow-color: #00F6FF;
+            --progress-bar-start: #00F6FF;
+            --progress-bar-end: #F72585;
+            --font-family-main: 'Inter', sans-serif;
+            --heading-color: #E6F1FF;
+            --heading-glow-color: #00F6FF;
+        }
+        
+        /* Theme: CrystalLight */
+        body.theme-crystallight {
+            --main-primary-color: #007BFF;
+            --main-secondary-color: #212529;
+            --main-accent-color: #007BFF;
+            --main-text-color: #212529;
+            --embed-bg: rgba(255, 255, 255, 0.85);
+            --embed-border-color-1: #007BFF;
+            --embed-border-color-2: #212529;
+            --embed-border-color-3: #E9ECEF;
+            --embed-border-color-4: #007BFF;
+            --glow-color: #007BFF;
+            --progress-bg: #E9ECEF;
+            --progress-bar-start: #007BFF;
+            --progress-bar-end: #212529;
+            --font-family-main: 'Montserrat', sans-serif;
+            --heading-color: #212529;
+            --heading-glow-color: transparent;
+        }
+        
+        /* Theme: RetroWave */
+        body.theme-retrowave {
+            --main-primary-color: #FF00C1;
+            --main-secondary-color: #00FFFF;
+            --main-accent-color: #FF00C1;
+            --main-text-color: #F72585;
+            --embed-bg: rgba(44, 4, 59, 0.95);
+            --embed-border-color-1: #FF00C1;
+            --embed-border-color-2: #00FFFF;
+            --embed-border-color-3: #FF00C1;
+            --embed-border-color-4: #00FFFF;
+            --glow-color: #F72585;
+            --progress-bg: #2C043B;
+            --progress-bar-start: #FF00C1;
+            --progress-bar-end: #00FFFF;
+            --font-family-main: 'VT323', monospace;
+            --heading-color: #00FFFF;
+            --heading-glow-color: #FF00C1;
+        }
+
+        /* Theme: Midnight Nebula */
+        body.theme-midnightnebula {
+            --main-primary-color: #FFD700;
+            --main-secondary-color: #C0C0C0;
+            --main-accent-color: #FFD700;
+            --main-text-color: #F0F8FF;
+            --embed-bg: rgba(11, 12, 30, 0.85);
+            --embed-border-color-1: #FFD700;
+            --embed-border-color-2: #C0C0C0;
+            --embed-border-color-3: #FFD700;
+            --embed-border-color-4: #C0C0C0;
+            --glow-color: #FFD700;
+            --progress-bg: #1a1a1a;
+            --progress-bar-start: #FFD700;
+            --progress-bar-end: #C0C0C0;
+            --font-family-main: 'Lato', sans-serif;
+            --heading-color: #F0F8FF;
+            --heading-glow-color: #FFD700;
+        }
+
+        /* Theme: Minimal Clean */
+        body.theme-minimalclean {
+            --embed-border-color-1: #a0a0a0;
+            --embed-border-color-2: #505050;
+            --embed-border-color-3: #444;
+            --embed-border-color-4: #ffffff;
+            --main-primary-color: #a0a0a0;
+            --main-secondary-color: #505050;
+            --main-accent-color: #ffffff;
+            --main-text-color: #e0e0e0;
+            --glow-color: #ffffff;
+            --progress-bg: #333;
+            --progress-bar-start: #555;
+            --progress-bar-end: #777;
+            --font-family-main: 'Inter', sans-serif;
+            --heading-color: #ffffff;
+            --heading-glow-color: #a0a0a0;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            color: #e0e0e0;
-            overflow-x: hidden;
-            background: #000;
-            /* Static background gradient from left to center */
-            background-image:
-                linear-gradient(to right, rgba(160, 32, 240, 0.25), rgba(255, 0, 64, 0.1), transparent 50%);
-            background-size: 200% 100%;
-            background-repeat: no-repeat;
-            background-position: left;
+            font-family: var(--font-family-main);
+            color: var(--main-text-color);
+            background-color: var(--bg-color);
+            transition: all 0.5s ease-in-out;
         }
         
         /* The starfield canvas */
@@ -35,16 +152,18 @@
         
         /* Keyframes for the pulsating border animation */
         @keyframes pulsating-border {
-            0%   { box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);   border-color: #ef4444; } /* Red */
-            25%  { box-shadow: 0 0 10px 5px rgba(139, 92, 246, 0.5); border-color: #8b5cf6; } /* Purple */
-            50%  { box-shadow: 0 0 10px 5px rgba(59, 130, 246, 0.5);  border-color: #3b82f6; } /* Blue */
-            75%  { box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); border-color: #ffffff; } /* White */
-            100% { box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);   border-color: #ef4444; } /* Back to Red */
+            0%   { box-shadow: 0 0 10px 5px var(--embed-border-color-1); border-color: var(--embed-border-color-1); }
+            25%  { box-shadow: 0 0 10px 5px var(--embed-border-color-2); border-color: var(--embed-border-color-2); }
+            50%  { box-shadow: 0 0 10px 5px var(--embed-border-color-3); border-color: var(--embed-border-color-3); }
+            75%  { box-shadow: 0 0 10px 5px var(--embed-border-color-4); border-color: var(--embed-border-color-4); }
+            100% { box-shadow: 0 0 10px 5px var(--embed-border-color-1); border-color: var(--embed-border-color-1); }
         }
         
         .pulsating-frame {
             border: 2px solid;
             animation: pulsating-border 5s linear infinite;
+            background-color: var(--embed-bg);
+            transition: all 0.5s ease-in-out;
         }
         
         /* Embed cool hover effect */
@@ -56,16 +175,25 @@
 
         /* Progress Bar Styling */
         .progress-bar-container {
-            background-color: #2d3748;
+            background-color: var(--progress-bg);
             border-radius: 9999px;
             height: 8px;
             overflow: hidden;
+            position: relative;
         }
         .progress-bar {
             height: 100%;
             transition: width 0.5s ease-in-out;
             border-radius: 9999px;
-            background-image: linear-gradient(to right, #6b46c1, #805ad5);
+            background-image: linear-gradient(to right, var(--progress-bar-start), var(--progress-bar-end));
+        }
+        .progress-text {
+            position: relative;
+            margin-top: 0.5rem;
+            color: var(--main-text-color);
+            font-family: var(--font-family-main);
+            font-size: 1rem;
+            text-align: center;
         }
 
         /* Custom scrollbar for better aesthetics */
@@ -85,7 +213,9 @@
 
         /* Cool text shadow effect for headings */
         .glow-text {
-            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+            color: var(--heading-color);
+            text-shadow: 0 0 5px var(--heading-glow-color), 0 0 10px var(--heading-glow-color), 0 0 15px var(--heading-glow-color);
+            transition: text-shadow 0.5s, color 0.5s;
         }
         
         /* Language logo styling */
@@ -100,9 +230,10 @@
 
         /* NABULA heading animation */
         .nabula-title {
-            font-family: 'Orbitron', sans-serif;
+            font-family: var(--font-family-title);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
             animation: title-glow 3s linear infinite alternate;
+            transition: font-family 0.5s;
         }
 
         @keyframes title-glow {
@@ -134,25 +265,80 @@
                 opacity: 0;
             }
         }
+        
+        /* Modal styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            position: relative;
+            background-color: var(--embed-bg);
+            border: 2px solid var(--embed-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--main-text-color);
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Loading indicator for AI function */
+        .ai-loading-spinner {
+            border: 4px solid var(--progress-bg);
+            border-top: 4px solid var(--glow-color);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
-<body class="bg-black text-gray-300 antialiased leading-relaxed">
+<body class="theme-neodark">
 
     <!-- The animated starfield and nebula background container -->
     <canvas id="starfield"></canvas>
-    
+
     <!-- Main content centered and with padding -->
     <div class="flex flex-col items-center min-h-screen p-4 sm:p-8 space-y-12">
 
         <!-- Header Section -->
-        <header class="text-center space-y-4">
+        <header class="text-center space-y-4 relative w-full">
             <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-wider nabula-title">
                 NABULA
             </h1>
-            <p class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
+            <p id="tagline-1" class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
                 The blueprint is complete, and the build has begun.
             </p>
-            <p class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
+            <p id="tagline-2" class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
                 The next generation of Discord bots is here. Nabula is being built from the ground up to replace all other bots, giving your server members a fun, engaging, and active experience.
             </p>
         </header>
@@ -163,71 +349,76 @@
         <!-- SYSTEM MODULES Section in its own pulsating frame -->
         <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 glow-text">BOT FUNCTIONS // FEATURES & CAPABILITIES</h2>
-                <p class="text-gray-400 mb-6">All modules are fully configurable through an intuitive web dashboard.</p>
+                <h2 id="modules-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">BOT FUNCTIONS // FEATURES & CAPABILITIES</h2>
+                <p id="modules-subtitle" class="text-gray-400 mb-6">All modules are fully configurable through an intuitive web dashboard.</p>
                 <ul class="space-y-6">
                     <li class="border-b border-gray-700 pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                            <h3 id="module-voice-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Temporary Voice Channels
                             </h3>
-                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-voice-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
                         </div>
-                        <p class="text-gray-400 text-sm mt-2">Allows members to dynamically create voice channels. The channel owner can manage limits, permissions, and visibility directly through a control panel sent to the voice chat upon creation.</p>
+                        <p id="module-voice-desc" class="text-gray-400 text-sm mt-2">Allows members to dynamically create voice channels. The channel owner can manage limits, permissions, and visibility directly through a control panel sent to the voice chat upon creation.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                            <h3 id="module-banners-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Interactive Welcome Banners
                             </h3>
-                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-banners-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
                         </div>
-                        <p class="text-gray-400 text-sm mt-2">Generates personalized banners with buttons and GIFs. Every detail, from the template to the text, is customizable via the dashboard.</p>
+                        <p id="module-banners-desc" class="text-gray-400 text-sm mt-2">Generates personalized banners with buttons and GIFs. Every detail, from the template to the text, is customizable via the dashboard.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                            <h3 id="module-leveling-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Dynamic Leveling System
                             </h3>
-                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-leveling-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
                         </div>
-                        <p class="text-gray-400 text-sm mt-2">An advanced XP protocol that rewards activity. XP rates, ranks, and automated role assignments are fully configured in the dashboard.</p>
+                        <p id="module-leveling-desc" class="text-gray-400 text-sm mt-2">An advanced XP protocol that rewards activity. XP rates, ranks, and automated role assignments are fully configured in the dashboard.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                            <h3 id="module-economy-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🛒 Nabula Shop & Economy
                             </h3>
-                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-economy-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
                         </div>
-                        <p class="text-gray-400 text-sm mt-2">Implements "NabCoins" and a shop for digital goods. Create and manage items, prices, and inventory directly from the dashboard.</p>
+                        <p id="module-economy-desc" class="text-gray-400 text-sm mt-2">Implements \"NabCoins\" and a shop for digital goods. Create and manage items, prices, and inventory directly from the dashboard.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                            <h3 id="module-holodeck-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Holodeck // Mini-Games
                             </h3>
-                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-holodeck-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
                         </div>
-                        <p class="text-gray-400 text-sm mt-2">Boosts server interaction with integrated games. Activate games and set wager limits for NabCoins through the dashboard.</p>
+                        <p id="module-holodeck-desc" class="text-gray-400 text-sm mt-2">Boosts server interaction with integrated games. Activate games and set wager limits for NabCoins through the dashboard.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                            <h3 id="module-guardian-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 GUARDIAN // Smart Moderation
                             </h3>
-                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-guardian-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
                         </div>
-                        <p class="text-gray-400 text-sm mt-2">An autonomous moderation agent with an adaptive word filter and anti-spam. All rules and filters are centrally managed in the dashboard.</p>
+                        <p id="module-guardian-desc" class="text-gray-400 text-sm mt-2">An autonomous moderation agent with an adaptive word filter and anti-spam. All rules and filters are centrally managed in the dashboard.</p>
                     </li>
                     <li class="embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                            <h3 id="module-more-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 💠 And many more modules are on the way...
                             </h3>
-                            <p class="text-sm font-bold text-red-500">[CLASSIFIED]</p>
+                            <p id="module-more-status" class="text-sm font-bold text-red-500">[CLASSIFIED]</p>
                         </div>
                         <p id="classified-module-container" class="text-gray-400 text-sm mt-2">The features listed are just the beginning. We're building some groundbreaking new systems that are still under wraps. // Stay tuned. It's going to be wild.</p>
+                        <div class="flex justify-center mt-4">
+                            <button id="show-ai-modal-btn" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:from-purple-700 hover:to-blue-600 transition-all duration-300">
+                                ✨ Show AI Bot Potential
+                            </button>
+                        </div>
                     </li>
                 </ul>
             </section>
@@ -239,27 +430,27 @@
         <!-- DEVELOPMENT LOG Section in its own pulsating frame -->
         <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 glow-text">DEVELOPMENT LOG // Active Workstreams</h2>
+                <h2 id="devlog-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">DEVELOPMENT LOG // Active Workstreams</h2>
                 <div class="space-y-8">
                     <div class="embed-item">
-                        <h3 class="text-xl font-semibold text-cyan-400 mb-2">[ WEBSITE & DASHBOARD ]</h3>
-                        <p class="text-gray-400 text-sm">Building the web interface for bot configuration and analytics.</p>
+                        <h3 id="devlog-website-title" class="text-xl font-semibold text-cyan-400 mb-2">[ WEBSITE & DASHBOARD ]</h3>
+                        <p id="devlog-website-desc" class="text-gray-400 text-sm">Building the web interface for bot configuration and analytics.</p>
                         <div class="progress-bar-container mt-2">
                             <div class="progress-bar" style="width: 30%;"></div>
                         </div>
                         <p class="progress-text" style="color: #ef4444;">30%</p>
                     </div>
                     <div class="embed-item">
-                        <h3 class="text-xl font-semibold text-cyan-400 mb-2">[ DISCORD BOT & API ]</h3>
-                        <p class="text-gray-400 text-sm">Developing the core bot application, API, and database integration.</p>
+                        <h3 id="devlog-discord-title" class="text-xl font-semibold text-cyan-400 mb-2">[ DISCORD BOT & API ]</h3>
+                        <p id="devlog-discord-desc" class="text-gray-400 text-sm">Developing the core bot application, API, and database integration.</p>
                         <div class="progress-bar-container mt-2">
                             <div class="progress-bar" style="width: 40%;"></div>
                         </div>
                         <p class="progress-text" style="color: #ef4444;">40%</p>
                     </div>
                     <div class="embed-item">
-                        <h3 class="text-xl font-semibold text-cyan-400 mb-2">[ CORE FUNCTIONS ]</h3>
-                        <p id="core-functions-log" class="text-gray-400 text-sm">Translating all feature blueprints into functional modules.</p>
+                        <h3 id="devlog-core-title" class="text-xl font-semibold text-cyan-400 mb-2">[ CORE FUNCTIONS ]</h3>
+                        <p id="devlog-core-desc" class="text-gray-400 text-sm">Translating all feature blueprints into functional modules.</p>
                         <div class="progress-bar-container mt-2">
                             <div class="progress-bar" style="width: 25%;"></div>
                         </div>
@@ -268,20 +459,21 @@
                 </div>
             </section>
         </div>
+
         <!-- Separator -->
         <div class="w-full h-px bg-gray-600 my-8"></div>
 
         <!-- New section for team/collaboration -->
         <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section class="text-center">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 glow-text">COMMUNITY // Join the Team</h2>
-                <p class="text-lg text-gray-400 mb-4">
+                <h2 id="community-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">COMMUNITY // Join the Team</h2>
+                <p id="community-text-1" class="text-lg text-gray-400 mb-4">
                     NABULA is a passion project, and I'm currently the sole developer. What started as a hobby project has the potential to become something much bigger.
                 </p>
-                <p class="text-lg text-gray-400 mb-4">
+                <p id="community-text-2" class="text-lg text-gray-400 mb-4">
                     To make this platform a reality—to make it fully functional and accessible to the public—I'm looking for help to complete everything.
                 </p>
-                <p class="text-lg text-gray-400">
+                <p id="community-text-3" class="text-lg text-gray-400">
                     I'm looking to build a dedicated team of creators and coders who share this vision. If you're passionate about redefining Discord servers and want to contribute to a groundbreaking project, let's build this future together.
                 </p>
                 <div class="flex flex-wrap justify-center items-center gap-6 mt-8">
@@ -316,14 +508,24 @@
         <!-- VISUAL SKINS Section -->
         <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 glow-text">VISUAL SKINS // UI Themes</h2>
-                <p class="text-gray-400 mb-6">Customize Nabula's visual output to match your community's aesthetic.</p>
-                <ul id="visual-skins-list" class="space-y-4 text-cyan-400 font-light text-lg">
-                    <li class="embed-item"><span class="text-purple-400">🎨 [ NeoDark ]</span> — Futuristic & clean.</li>
-                    <li class="embed-item"><span class="text-purple-400">🎨 [ CrystalLight ]</span> — Bright & modern.</li>
-                    <li class="embed-item"><span class="text-purple-400">🎨 [ RetroWave ]</span> — Pulsating 80s synthwave vibes.</li>
-                    <li class="embed-item"><span class="text-purple-400">🎨 [ Midnight Nebula ]</span> — Elegant starry skies & galaxies.</li>
-                    <li class="embed-item"><span class="text-purple-400">🎨 [ Minimal Clean ]</span> — Reduced to the absolute essentials.</li>
+                <h2 id="skins-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">VISUAL SKINS // UI Themes</h2>
+                <p id="skins-subtitle" class="text-gray-400 mb-6">Customize Nabula's visual output to match your community's aesthetic. <span style="color: #ff0000; font-weight: bold;">Click on a theme to apply it!</span></p>
+                <ul id="visual-skins-list" class="space-y-4 font-light text-lg">
+                    <li class="embed-item cursor-pointer theme-button" data-theme="neodark">
+                        <span class="text-purple-400">🎨 [ NeoDark ]</span> — Futuristic & clean.
+                    </li>
+                    <li class="embed-item cursor-pointer theme-button" data-theme="crystallight">
+                        <span class="text-purple-400">🎨 [ CrystalLight ]</span> — Bright & modern.
+                    </li>
+                    <li class="embed-item cursor-pointer theme-button" data-theme="retrowave">
+                        <span class="text-purple-400">🎨 [ RetroWave ]</span> — Pulsating 80s synthwave vibes.
+                    </li>
+                    <li class="embed-item cursor-pointer theme-button" data-theme="midnightnebula">
+                        <span class="text-purple-400">🎨 [ Midnight Nebula ]</span> — Elegant starry skies & galaxies.
+                    </li>
+                    <li class="embed-item cursor-pointer theme-button" data-theme="minimalclean">
+                        <span class="text-purple-400">🎨 [ Minimal Clean ]</span> — Reduced to the absolute essentials.
+                    </li>
                 </ul>
             </section>
         </div>
@@ -334,8 +536,8 @@
         <!-- LICENSE Section -->
         <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <footer class="text-center">
-                <h2 class="text-xl font-bold text-white mb-2 glow-text">CONTACT // Join the Team</h2>
-                <p class="text-gray-400 mb-4">Are you a passionate developer or designer who wants to help build Nabula? For a better collaboration and communication, it's best if you speak German or Norwegian. Feel free to reach out to me on Discord!</p>
+                <h2 id="contact-title" class="text-xl font-bold text-white mb-2 glow-text">CONTACT // Join the Team</h2>
+                <p id="contact-text-1" class="text-gray-400 mb-4">Are you a passionate developer or designer who wants to help build Nabula? For a better collaboration and communication, it's best if you speak German or Norwegian. Feel free to reach out to me on Discord!</p>
                 <div class="flex flex-wrap justify-center items-center gap-4 mt-8"> 
                     <a href="https://discord.gg/GK6pHmNMpd">
                         <img src="https://img.shields.io/badge/Discord-Join%20our%20Server-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Discord Badge" />
@@ -348,15 +550,305 @@
         </div>
     </div>
     
+    <!-- AI Modal -->
+    <div id="ai-modal" class="modal hidden">
+        <div class="modal-content pulsating-frame">
+            <button id="modal-close-btn" class="modal-close-btn">
+                &times;
+            </button>
+            <h3 id="modal-title" class="text-2xl font-bold text-white mb-4 glow-text"></h3>
+            <div id="ai-modal-content" class="text-gray-400">
+                <!-- AI content will be loaded here -->
+            </div>
+            <div id="ai-loading-indicator" class="mt-4 flex justify-center hidden">
+                <div class="ai-loading-spinner"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const translations = {
+                en: {
+                    tagline1: "The blueprint is complete, and the build has begun.",
+                    tagline2: "The next generation of Discord bots is here. Nabula is being built from the ground up to replace all other bots, giving your server members a fun, engaging, and active experience.",
+                    modulesTitle: "BOT FUNCTIONS // FEATURES & CAPABILITIES",
+                    modulesSubtitle: "All modules are fully configurable through an intuitive web dashboard.",
+                    moduleVoiceTitle: "🔹 Temporary Voice Channels",
+                    moduleVoiceStatus: "[ ⚙️ IN DEVELOPMENT ]",
+                    moduleVoiceDesc: "Allows members to dynamically create voice channels. The channel owner can manage limits, permissions, and visibility directly through a control panel sent to the voice chat upon creation.",
+                    moduleBannersTitle: "🔹 Interactive Welcome Banners",
+                    moduleBannersStatus: "[ ⚙️ IN DEVELOPMENT ]",
+                    moduleBannersDesc: "Generates personalized banners with buttons and GIFs. Every detail, from the template to the text, is customizable via the dashboard.",
+                    moduleLevelingTitle: "🔹 Dynamic Leveling System",
+                    moduleLevelingStatus: "[ ⚙️ IN DEVELOPMENT ]",
+                    moduleLevelingDesc: "An advanced XP protocol that rewards activity. XP rates, ranks, and automated role assignments are fully configured in the dashboard.",
+                    moduleEconomyTitle: "🛒 Nabula Shop & Economy",
+                    moduleEconomyStatus: "[ ⚙️ IN DEVELOPMENT ]",
+                    moduleEconomyDesc: "Implements \"NabCoins\" and a shop for digital goods. Create and manage items, prices, and inventory directly from the dashboard.",
+                    moduleHolodeckTitle: "🔹 Holodeck // Mini-Games",
+                    moduleHolodeckStatus: "[ ⚙️ IN DEVELOPMENT ]",
+                    moduleHolodeckDesc: "Boosts server interaction with integrated games. Activate games and set wager limits for NabCoins through the dashboard.",
+                    moduleGuardianTitle: "🔹 GUARDIAN // Smart Moderation",
+                    moduleGuardianStatus: "[ ⚙️ IN DEVELOPMENT ]",
+                    moduleGuardianDesc: "An autonomous moderation agent with an adaptive word filter and anti-spam. All rules and filters are centrally managed in the dashboard.",
+                    moduleMoreTitle: "💠 And many more modules are on the way...",
+                    moduleMoreStatus: "[CLASSIFIED]",
+                    classifiedModuleContainer: "The features listed are just the beginning. We're building some groundbreaking new systems that are still under wraps. // Stay tuned. It's going to be wild.",
+                    devlogTitle: "DEVELOPMENT LOG // Active Workstreams",
+                    devlogWebsiteTitle: "[ WEBSITE & DASHBOARD ]",
+                    devlogWebsiteDesc: "Building the web interface for bot configuration and analytics.",
+                    devlogDiscordTitle: "[ DISCORD BOT & API ]",
+                    devlogDiscordDesc: "Developing the core bot application, API, and database integration.",
+                    devlogCoreTitle: "[ CORE FUNCTIONS ]",
+                    devlogCoreDesc: "Translating all feature blueprints into functional modules.",
+                    communityTitle: "COMMUNITY // Join the Team",
+                    communityText1: "NABULA is a passion project, and I'm currently the sole developer. What started as a hobby project has the potential to become something much bigger.",
+                    communityText2: "To make this platform a reality—to make it fully functional and accessible to the public—I'm looking for help to complete everything.",
+                    communityText3: "I'm looking to build a dedicated team of creators and coders who share this vision. If you're passionate about redefining Discord servers and want to contribute to a groundbreaking project, let's build this future together.",
+                    skinsTitle: "VISUAL SKINS // UI Themes",
+                    skinsSubtitle: "Customize Nabula's visual output to match your community's aesthetic. Click on a theme to apply it!",
+                    contactTitle: "CONTACT // Join the Team",
+                    contactText1: "Are you a passionate developer or designer who wants to help build Nabula? For a better collaboration and communication, it's best if you speak German or Norwegian. Feel free to reach out to me on Discord!",
+                    themeText: "Theme",
+                    langText: "Language",
+                    aiModalTitle: "Unleashing NABULA's Potential",
+                    aiModalText: "NABULA is more than just a bot; it's a vision for the future of Discord. Its modular architecture and intelligent core allow for limitless expansion, from AI-driven moderation to fully immersive, personalized community experiences. The potential is vast, and with a dedicated team, we can turn this blueprint into the definitive Discord platform."
+                },
+                de: {
+                    tagline1: "Der Bauplan ist fertiggestellt, der Bau hat begonnen.",
+                    tagline2: "Die nächste Generation von Discord-Bots ist da. Nabula wird von Grund auf neu entwickelt, um alle anderen Bots zu ersetzen und Ihren Servermitgliedern ein unterhaltsames, fesselndes und aktives Erlebnis zu bieten.",
+                    modulesTitle: "BOT-FUNKTIONEN // FEATURES & FÄHIGKEITEN",
+                    modulesSubtitle: "Alle Module sind über ein intuitives Web-Dashboard vollständig konfigurierbar.",
+                    moduleVoiceTitle: "🔹 Temporäre Sprachkanäle",
+                    moduleVoiceStatus: "[ ⚙️ IN ENTWICKLUNG ]",
+                    moduleVoiceDesc: "Ermöglicht es Mitgliedern, dynamisch Sprachkanäle zu erstellen. Der Kanalinhaber kann Limits, Berechtigungen und Sichtbarkeit direkt über ein Kontrollpanel verwalten, das nach der Erstellung an den Sprachchat gesendet wird.",
+                    moduleBannersTitle: "🔹 Interaktive Willkommensbanner",
+                    moduleBannersStatus: "[ ⚙️ IN ENTWICKLUNG ]",
+                    moduleBannersDesc: "Erstellt personalisierte Banner mit Schaltflächen und GIFs. Jedes Detail, von der Vorlage bis zum Text, kann über das Dashboard angepasst werden.",
+                    moduleLevelingTitle: "🔹 Dynamisches Leveling-System",
+                    moduleLevelingStatus: "[ ⚙️ IN ENTWICKLUNG ]",
+                    moduleLevelingDesc: "Ein fortschrittliches XP-Protokoll, das Aktivität belohnt. XP-Raten, Ränge und automatische Rollenzuweisungen werden vollständig im Dashboard konfiguriert.",
+                    moduleEconomyTitle: "🛒 Nabula Shop & Economy",
+                    moduleEconomyStatus: "[ ⚙️ IN ENTWICKLUNG ]",
+                    moduleEconomyDesc: "Implementiert „NabCoins“ und einen Shop für digitale Güter. Erstellen und verwalten Sie Gegenstände, Preise und Inventar direkt über das Dashboard.",
+                    moduleHolodeckTitle: "🔹 Holodeck // Mini-Spiele",
+                    moduleHolodeckStatus: "[ ⚙️ IN ENTWICKLUNG ]",
+                    moduleHolodeckDesc: "Steigert die Server-Interaktion mit integrierten Spielen. Aktivieren Sie Spiele und legen Sie Einsatzlimits für NabCoins über das Dashboard fest.",
+                    moduleGuardianTitle: "🔹 GUARDIAN // Smarte Moderation",
+                    moduleGuardianStatus: "[ ⚙️ IN ENTWICKLUNG ]",
+                    moduleGuardianDesc: "Ein autonomer Moderations-Agent mit einem adaptiven Wortfilter und Anti-Spam. Alle Regeln und Filter werden zentral im Dashboard verwaltet.",
+                    moduleMoreTitle: "💠 Und viele weitere Module sind auf dem Weg...",
+                    moduleMoreStatus: "[GEHEIM]",
+                    classifiedModuleContainer: "Die aufgeführten Features sind nur der Anfang. Wir entwickeln einige bahnbrechende neue Systeme, die noch unter Verschluss gehalten werden. // Bleiben Sie dran. Es wird wild werden.",
+                    devlogTitle: "ENTWICKLUNGSLOG // Aktive Arbeitsschritte",
+                    devlogWebsiteTitle: "[ WEBSEITE & DASHBOARD ]",
+                    devlogWebsiteDesc: "Entwicklung der Weboberfläche für die Bot-Konfiguration und -Analyse.",
+                    devlogDiscordTitle: "[ DISCORD BOT & API ]",
+                    devlogDiscordDesc: "Entwicklung der Kern-Bot-Anwendung, API- und Datenbank-Integration.",
+                    devlogCoreTitle: "[ KERNFUNKTIONEN ]",
+                    devlogCoreDesc: "Umsetzung aller Feature-Baupläne in funktionale Module.",
+                    communityTitle: "GEMEINSCHAFT // Werde Teil des Teams",
+                    communityText1: "NABULA ist ein Herzensprojekt, und ich bin derzeit der einzige Entwickler. Was als Hobbyprojekt begann, hat das Potenzial, zu etwas viel Größerem zu werden.",
+                    communityText2: "Um diese Plattform zur Realität zu machen – um sie voll funktionsfähig und für die Öffentlichkeit zugänglich zu machen – suche ich nach Hilfe, um alles fertigzustellen.",
+                    communityText3: "Ich möchte ein engagiertes Team von Kreativen und Codern aufbauen, die diese Vision teilen. Wenn Sie leidenschaftlich daran interessiert sind, Discord-Server neu zu definieren und zu einem bahnbrechenden Projekt beizutragen, lassen Sie uns diese Zukunft gemeinsam aufbauen.",
+                    skinsTitle: "VISUELLE SKINS // UI-Themen",
+                    skinsSubtitle: "Passen Sie die visuelle Ausgabe von Nabula an die Ästhetik Ihrer Community an. Klicken Sie auf ein Thema, um es anzuwenden!",
+                    contactTitle: "KONTAKT // Werde Teil des Teams",
+                    contactText1: "Sind Sie ein leidenschaftlicher Entwickler oder Designer, der beim Aufbau von Nabula helfen möchte? Für eine bessere Zusammenarbeit und Kommunikation ist es am besten, wenn Sie Deutsch oder Norwegisch sprechen. Kontaktieren Sie mich gerne auf Discord!",
+                    themeText: "Thema",
+                    langText: "Sprache",
+                    aiModalTitle: "Das Potenzial von NABULA entfesseln",
+                    aiModalText: "NABULA ist mehr als nur ein Bot; es ist eine Vision für die Zukunft von Discord. Seine modulare Architektur und der intelligente Kern ermöglichen eine grenzenlose Erweiterung, von KI-gesteuerter Moderation bis hin zu vollständig immersiven, personalisierten Community-Erlebnissen. Das Potenzial ist riesig, und mit einem engagierten Team können wir diesen Bauplan in die ultimative Discord-Plattform verwandeln."
+                },
+                nb: {
+                    tagline1: "Blåkopi er fullført, byggingen har begynt.",
+                    tagline2: "Neste generasjon av Discord-roboter er her. Nabula bygges fra grunnen av for å erstatte alle andre roboter, og gir servermedlemmene dine en morsom, engasjerende og aktiv opplevelse.",
+                    modulesTitle: "BOT-FUNKSJONER // FUNKSJONER OG KAPASITETER",
+                    modulesSubtitle: "Alle moduler kan konfigureres fullt ut via et intuitivt web-dashboard.",
+                    moduleVoiceTitle: "🔹 Midlertidige talekanaler",
+                    moduleVoiceStatus: "[ ⚙️ UNDER UTVIKLING ]",
+                    moduleVoiceDesc: "Lar medlemmer dynamisk opprette talekanaler. Kanaleieren kan administrere grenser, tillatelser og synlighet direkte via et kontrollpanel som sendes til talechatten ved opprettelse.",
+                    moduleBannersTitle: "🔹 Interaktive velkomstbannere",
+                    moduleBannersStatus: "[ ⚙️ UNDER UTVIKLING ]",
+                    moduleBannersDesc: "Genererer personlige bannere med knapper og GIF-er. Hver detalj, fra malen til teksten, kan tilpasses via dashboardet.",
+                    moduleLevelingTitle: "🔹 Dynamisk Nivåsystem",
+                    moduleLevelingStatus: "[ ⚙️ UNDER UTVIKLING ]",
+                    moduleLevelingDesc: "En avansert XP-protokoll som belønner aktivitet. XP-rater, rangeringer og automatiske roletildelinger er fullt konfigurert i dashboardet.",
+                    moduleEconomyTitle: "🛒 Nabula Shop & Økonomi",
+                    moduleEconomyStatus: "[ ⚙️ UNDER UTVIKLING ]",
+                    moduleEconomyDesc: "Implementerer «NabCoins» og en butikk for digitale varer. Opprett og administrer elementer, priser og inventar direkte fra dashboardet.",
+                    moduleHolodeckTitle: "🔹 Holodeck // Mini-Spill",
+                    moduleHolodeckStatus: "[ ⚙️ UNDER UTVIKLING ]",
+                    moduleHolodeckDesc: "Øker serverinteraksjon med integrerte spill. Aktiver spill og sett innsatsgrenser for NabCoins gjennom dashboardet.",
+                    moduleGuardianTitle: "🔹 GUARDIAN // Smart Moderering",
+                    moduleGuardianStatus: "[ ⚙️ UNDER UTVIKLING ]",
+                    moduleGuardianDesc: "En autonom modereringsagent med et adaptivt ordfilter og anti-spam. Alle regler og filtre administreres sentralt i dashboardet.",
+                    moduleMoreTitle: "💠 Og mange flere moduler er på vei...",
+                    moduleMoreStatus: "[KLASSIFISERT]",
+                    classifiedModuleContainer: "Funksjonene som er oppført er bare begynnelsen. Vi bygger noen banebrytende nye systemer som fortsatt holdes hemmelige. // Følg med. Det kommer til å bli vilt.",
+                    devlogTitle: "UTVIKLINGSLOGG // Aktive arbeidsstrømmer",
+                    devlogWebsiteTitle: "[ NETTSIDE OG DASHBOARD ]",
+                    devlogWebsiteDesc: "Bygger webgrensesnitt for bot-konfigurasjon og analyse.",
+                    devlogDiscordTitle: "[ DISCORD BOT OG API ]",
+                    devlogDiscordDesc: "Utvikler kjerne bot-applikasjonen, API og database-integrasjon.",
+                    devlogCoreTitle: "[ KJERNEFUNKSJONER ]",
+                    devlogCoreDesc: "Oversetter alle funksjonsblåkopier til funksjonelle moduler.",
+                    communityTitle: "FELLESSKAP // Bli med på teamet",
+                    communityText1: "NABULA er et lidenskapsprosjekt, og jeg er for tiden den eneste utvikleren. Det som startet som et hobbyprosjekt har potensial til å bli noe mye større.",
+                    communityText2: "For å gjøre denne plattformen til virkelighet – for å gjøre den fullt funksjonell og tilgjengelig for publikum – ser jeg etter hjelp til å fullføre alt.",
+                    communityText3: "Jeg ønsker å bygge et dedikert team av skapere og kodere som deler denne visjonen. Hvis du brenner for å omdefinere Discord-servere og ønsker å bidra til et banebrytende prosjekt, la oss bygge denne fremtiden sammen.",
+                    skinsTitle: "VISUELLE SKINN // UI-temaer",
+                    skinsSubtitle: "Tilpass Nabulas visuelle utgang til samfunnets estetikk. Klikk på et tema for å bruke det!",
+                    contactTitle: "KONTAKT // Bli med på teamet",
+                    contactText1: "Er du en lidenskapelig utvikler eller designer som vil bidra til å bygge Nabula? For bedre samarbeid og kommunikasjon er det best om du snakker tysk oder norwegisch. Ta gjerne kontakt med meg på Discord!",
+                    themeText: "Tema",
+                    langText: "Språk",
+                    aiModalTitle: "Slipp løs NABULAs potensial",
+                    aiModalText: "NABULA er mer enn bare en bot; det er en visjon for fremtiden til Discord. Den modulære arkitekturen og intelligente kjernen åpner for ubegrenset utvidelse, fra AI-drevet moderering til fullt oppslukende, personlige samfunnsopplevelser. Potensialet er enormt, og med et dedikert team kan vi gjøre denne blåkopi til den definitive Discord-plattformen."
+                }
+            };
+            
+            const elementsToTranslate = {
+                tagline1: document.getElementById('tagline-1'),
+                tagline2: document.getElementById('tagline-2'),
+                modulesTitle: document.getElementById('modules-title'),
+                modulesSubtitle: document.getElementById('modules-subtitle'),
+                moduleVoiceTitle: document.getElementById('module-voice-title'),
+                moduleVoiceStatus: document.getElementById('module-voice-status'),
+                moduleVoiceDesc: document.getElementById('module-voice-desc'),
+                moduleBannersTitle: document.getElementById('module-banners-title'),
+                moduleBannersStatus: document.getElementById('module-banners-status'),
+                moduleBannersDesc: document.getElementById('module-banners-desc'),
+                moduleLevelingTitle: document.getElementById('module-leveling-title'),
+                moduleLevelingStatus: document.getElementById('module-leveling-status'),
+                moduleLevelingDesc: document.getElementById('module-leveling-desc'),
+                moduleEconomyTitle: document.getElementById('module-economy-title'),
+                moduleEconomyStatus: document.getElementById('module-economy-status'),
+                moduleEconomyDesc: document.getElementById('module-economy-desc'),
+                moduleHolodeckTitle: document.getElementById('module-holodeck-title'),
+                moduleHolodeckStatus: document.getElementById('module-holodeck-status'),
+                moduleHolodeckDesc: document.getElementById('module-holodeck-desc'),
+                moduleGuardianTitle: document.getElementById('module-guardian-title'),
+                moduleGuardianStatus: document.getElementById('module-guardian-status'),
+                moduleGuardianDesc: document.getElementById('module-guardian-desc'),
+                moduleMoreTitle: document.getElementById('module-more-title'),
+                moduleMoreStatus: document.getElementById('module-more-status'),
+                classifiedModuleContainer: document.getElementById('classified-module-container'),
+                devlogTitle: document.getElementById('devlog-title'),
+                devlogWebsiteTitle: document.getElementById('devlog-website-title'),
+                devlogWebsiteDesc: document.getElementById('devlog-website-desc'),
+                devlogDiscordTitle: document.getElementById('devlog-discord-title'),
+                devlogDiscordDesc: document.getElementById('devlog-discord-desc'),
+                devlogCoreTitle: document.getElementById('devlog-core-title'),
+                devlogCoreDesc: document.getElementById('devlog-core-desc'),
+                communityTitle: document.getElementById('community-title'),
+                communityText1: document.getElementById('community-text-1'),
+                communityText2: document.getElementById('community-text-2'),
+                communityText3: document.getElementById('community-text-3'),
+                skinsTitle: document.getElementById('skins-title'),
+                skinsSubtitle: document.getElementById('skins-subtitle'),
+                contactTitle: document.getElementById('contact-title'),
+                contactText1: document.getElementById('contact-text-1')
+            };
+
+            function applyTranslation(lang) {
+                const translation = translations[lang];
+                if (translation) {
+                    for (const key in elementsToTranslate) {
+                        if (elementsToTranslate[key] && translation[key]) {
+                            elementsToTranslate[key].textContent = translation[key];
+                        }
+                    }
+                }
+            }
+
+            // Theme switcher logic
+            const themeButtons = document.querySelectorAll('.theme-button');
+            const body = document.body;
+
+            themeButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const theme = e.currentTarget.getAttribute('data-theme');
+                    body.className = '';
+                    body.classList.add(`theme-${theme}`);
+                    localStorage.setItem('nabulaTheme', theme);
+                });
+            });
+
+            // Load saved preferences
+            const savedLang = localStorage.getItem('nabulaLang') || 'en';
+            applyTranslation(savedLang);
+            const savedTheme = localStorage.getItem('nabulaTheme') || 'neodark';
+            body.classList.add(`theme-${savedTheme}`);
+
+            // AI Modal Logic
+            const showAiModalBtn = document.getElementById('show-ai-modal-btn');
+            const aiModal = document.getElementById('ai-modal');
+            const aiModalContent = document.getElementById('ai-modal-content');
+            const modalTitle = document.getElementById('modal-title');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            showAiModalBtn.addEventListener('click', async () => {
+                aiModal.classList.remove('hidden');
+                const aiLoadingIndicator = document.getElementById('ai-loading-indicator');
+                aiLoadingIndicator.classList.remove('hidden');
+
+                const lang = localStorage.getItem('nabulaLang') || 'en';
+                const prompt = `Generate a text in a modern, elegant style about the great potential of a Discord bot named Nabula. Explain that its modular architecture and intelligent core make it more than a simple bot, but a full-fledged, scalable platform. The text should be suitable for a landing page and have a maximum of 80 words. The language should be in ${translations[lang].langText}.`;
+                
+                try {
+                    const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                    const payload = { contents: chatHistory };
+                    const apiKey = "";
+                    const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=" + apiKey;
+
+                    // Adding a delay to simulate loading
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    const aiText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                    if (aiText) {
+                        modalTitle.textContent = translations[lang].aiModalTitle;
+                        aiModalContent.textContent = aiText;
+                    } else {
+                        modalTitle.textContent = "Error";
+                        aiModalContent.textContent = "Error generating content. Please try again.";
+                    }
+                } catch (error) {
+                    console.error("Failed to fetch AI content:", error);
+                    modalTitle.textContent = "Error";
+                    aiModalContent.textContent = "An error occurred while fetching AI content. Please check the console for more details.";
+                } finally {
+                    aiLoadingIndicator.classList.add('hidden');
+                }
+            });
+
+            modalCloseBtn.addEventListener('click', () => {
+                aiModal.classList.add('hidden');
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', (event) => {
+                if (event.target === aiModal) {
+                    aiModal.classList.add('hidden');
+                }
+            });
+
             // Starfield animation script
             const canvas = document.getElementById('starfield');
             const ctx = canvas.getContext('2d');
             let stars = [];
-            const starCount = 800;
+            const starCount = 1000;
             const shootingStars = [];
-            const shootingStarColors = ['#ef4444', '#00ff00', '#fff']; // Red, Green, White
+            const shootingStarColors = ['#ff0040', '#a020f0', '#ffffff'];
 
             function setCanvasSize() {
                 canvas.width = window.innerWidth;
@@ -371,26 +863,25 @@
                         y: Math.random() * canvas.height,
                         radius: Math.random() * 1.5,
                         opacity: Math.random() * 0.5 + 0.5,
-                        twinkle: Math.random() * 0.05
+                        twinkle: (Math.random() * 0.05 - 0.025)
                     });
                 }
             }
 
             function createShootingStar() {
-                // Ensure stars fly across the entire screen
-                const side = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
+                const side = Math.floor(Math.random() * 4);
                 let startX, startY;
-                if (side === 0) { // from top
+                if (side === 0) {
                     startX = Math.random() * canvas.width;
-                    startY = -10;
-                } else if (side === 1) { // from right
-                    startX = canvas.width + 10;
+                    startY = -20;
+                } else if (side === 1) {
+                    startX = canvas.width + 20;
                     startY = Math.random() * canvas.height;
-                } else if (side === 2) { // from bottom
+                } else if (side === 2) {
                     startX = Math.random() * canvas.width;
-                    startY = canvas.height + 10;
-                } else { // from left
-                    startX = -10;
+                    startY = canvas.height + 20;
+                } else {
+                    startX = -20;
                     startY = Math.random() * canvas.height;
                 }
 
@@ -398,8 +889,8 @@
                 const endY = Math.random() * canvas.height;
                 const angle = Math.atan2(endY - startY, endX - startX);
                 
-                const speed = Math.random() * 5 + 3;
-                const length = Math.random() * 200 + 100;
+                const speed = Math.random() * 8 + 5;
+                const length = Math.random() * 300 + 200;
                 const color = shootingStarColors[Math.floor(Math.random() * shootingStarColors.length)];
 
                 shootingStars.push({
@@ -409,7 +900,6 @@
                     length: length,
                     color: color,
                     angle: angle,
-                    life: 1
                 });
             }
 
@@ -419,12 +909,11 @@
                     star.x += star.speed * Math.cos(star.angle);
                     star.y += star.speed * Math.sin(star.angle);
                     
-                    // Remove stars when they are off screen
                     if (star.x < -star.length || star.x > canvas.width + star.length || star.y < -star.length || star.y > canvas.height + star.length) {
                         shootingStars.splice(i, 1);
                     }
                 }
-                if (Math.random() < 0.015) { // Spawn new shooting star with a probability
+                if (Math.random() < 0.02) {
                     createShootingStar();
                 }
             }
@@ -443,7 +932,7 @@
                     ctx.moveTo(star.x, star.y);
                     ctx.lineTo(tailX, tailY);
                     ctx.strokeStyle = gradient;
-                    ctx.lineWidth = 2;
+                    ctx.lineWidth = 3;
                     ctx.stroke();
                 });
             }
@@ -465,8 +954,8 @@
                     if (star.opacity > 1 || star.opacity < 0.5) {
                         star.twinkle *= -1;
                     }
-                    star.x += (Math.random() - 0.5) * 0.1;
-                    star.y += (Math.random() - 0.5) * 0.1;
+                    star.x += (Math.random() - 0.5) * 0.2;
+                    star.y += (Math.random() - 0.5) * 0.2;
                 });
             }
 
