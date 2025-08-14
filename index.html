@@ -7,84 +7,30 @@
     <!-- Use a simple CDN to make the file fully self-contained -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;700&display=swap');
 
         /* Base styles for font and body */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #000;
-            color: #ffffff;
+            color: #e0e0e0;
             overflow-x: hidden;
-        }
-
-        /* Animated Nebula Background with fluid motion */
-        .nebula-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
             background: #000;
-            animation: nebula-movement 60s linear infinite;
+            /* Static background gradient from left to center */
+            background-image:
+                linear-gradient(to right, rgba(160, 32, 240, 0.25), rgba(255, 0, 64, 0.1), transparent 50%);
+            background-size: 200% 100%;
+            background-repeat: no-repeat;
+            background-position: left;
         }
-
-        /* Create the nebula effect using pseudo-elements */
-        .nebula-bg::before, .nebula-bg::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%),
-                        radial-gradient(circle, rgba(0, 200, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%),
-                        radial-gradient(circle, rgba(0, 150, 255, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
-            animation: nebula-pulse 20s infinite ease-in-out;
-        }
-
-        .nebula-bg::before {
-            width: 150%;
-            height: 150%;
-            top: -25%;
-            left: -25%;
-        }
-
-        .nebula-bg::after {
-            width: 120%;
-            height: 120%;
-            bottom: -10%;
-            right: -10%;
-            animation-delay: -10s;
-        }
-
-        /* Add subtle stars with background images */
-        .nebula-bg-stars {
+        
+        /* The starfield canvas */
+        #starfield {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            background-image:
-                radial-gradient(1px 1px at 50% 50%, #fff, rgba(255, 255, 255, 0.5)),
-                radial-gradient(1px 1px at 30% 70%, #fff, rgba(255, 255, 255, 0.5)),
-                radial-gradient(1px 1px at 70% 30%, #fff, rgba(255, 255, 255, 0.5)),
-                radial-gradient(1px 1px at 20% 80%, #fff, rgba(255, 255, 255, 0.5)),
-                radial-gradient(1px 1px at 80% 20%, #fff, rgba(255, 255, 255, 0.5));
-            background-size: 4px 4px;
-            animation: twinkle 3s infinite alternate;
-        }
-
-        /* Keyframes for the background animations */
-        @keyframes nebula-movement {
-            from { background-position: 0 0; }
-            to { background-position: 100% 100%; }
-        }
-        @keyframes nebula-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 0.6; }
-        }
-        @keyframes twinkle {
-            from { opacity: 0.8; }
-            to { opacity: 0.6; }
         }
         
         /* Keyframes for the pulsating border animation */
@@ -99,16 +45,6 @@
         .pulsating-frame {
             border: 2px solid;
             animation: pulsating-border 5s linear infinite;
-        }
-
-        /* New: Pulsating text effect */
-        .pulsating-text {
-            border: none;
-            box-shadow: none;
-            animation: pulsating-border 5s linear infinite;
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
         }
         
         /* Embed cool hover effect */
@@ -161,25 +97,66 @@
         .lang-logo:hover {
             transform: scale(1.1);
         }
+
+        /* NABULA heading animation */
+        .nabula-title {
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+            animation: title-glow 3s linear infinite alternate;
+        }
+
+        @keyframes title-glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; }
+            to { text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff; }
+        }
+
+        /* Shooting star animation */
+        .shooting-star {
+            position: absolute;
+            background: linear-gradient(-45deg, #fff, transparent);
+            border-radius: 50%;
+            width: 5px;
+            height: 5px;
+            opacity: 0;
+            animation: shoot-star linear infinite;
+        }
+
+        @keyframes shoot-star {
+            0% {
+                transform: rotate(-45deg) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-45deg) translateX(200vw);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-black text-gray-300 antialiased leading-relaxed">
 
-    <!-- The animated nebula background container -->
-    <div class="nebula-bg"></div>
-    <!-- Container for subtle star effects -->
-    <div class="nebula-bg-stars"></div>
+    <!-- The animated starfield and nebula background container -->
+    <canvas id="starfield"></canvas>
+    
+    <!-- Shooting Stars -->
+    <div class="shooting-star" style="top: 20%; left: 10%; animation-delay: 2s; animation-duration: 3s; background: linear-gradient(-45deg, #ef4444, transparent);"></div>
+    <div class="shooting-star" style="top: 50%; left: 30%; animation-delay: 5s; animation-duration: 4s; background: linear-gradient(-45deg, #fff, transparent);"></div>
+    <div class="shooting-star" style="top: 80%; left: 5%; animation-delay: 8s; animation-duration: 2.5s; background: linear-gradient(-45deg, #00ff00, transparent);"></div>
+    <div class="shooting-star" style="top: 10%; left: 70%; animation-delay: 1s; animation-duration: 5s; background: linear-gradient(-45deg, #fff, transparent);"></div>
+    <div class="shooting-star" style="top: 65%; left: 90%; animation-delay: 6s; animation-duration: 3.5s; background: linear-gradient(-45deg, #ef4444, transparent);"></div>
+    <div class="shooting-star" style="top: 35%; left: 50%; animation-delay: 4s; animation-duration: 4.5s; background: linear-gradient(-45deg, #00ff00, transparent);"></div>
 
     <!-- Main content centered and with padding -->
     <div class="flex flex-col items-center min-h-screen p-4 sm:p-8 space-y-12">
 
         <!-- Header Section -->
         <header class="text-center space-y-4">
-            <div class="pulsating-text rounded-2xl p-4">
-                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-wider">
-                    NABULA
-                </h1>
-            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-wider nabula-title">
+                NABULA
+            </h1>
             <p class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
                 The blueprint is complete, and the build has begun.
             </p>
@@ -206,7 +183,7 @@
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Allows members to dynamically create voice channels. The channel owner can manage limits, permissions, and visibility directly through a control panel sent to the voice chat upon creation.</p>
                     </li>
-                    <li class="border-b border-gray-700 pb-4 embed-item">
+                    <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Interactive Welcome Banners
@@ -215,7 +192,7 @@
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Generates personalized banners with buttons and GIFs. Every detail, from the template to the text, is customizable via the dashboard.</p>
                     </li>
-                    <li class="border-b border-gray-700 pb-4 embed-item">
+                    <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Dynamic Leveling System
@@ -224,7 +201,7 @@
                         </div>
                         <p class="text-gray-400 text-sm mt-2">An advanced XP protocol that rewards activity. XP rates, ranks, and automated role assignments are fully configured in the dashboard.</p>
                     </li>
-                    <li class="border-b border-gray-700 pb-4 embed-item">
+                    <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🛒 Nabula Shop & Economy
@@ -233,7 +210,7 @@
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Implements "NabCoins" and a shop for digital goods. Create and manage items, prices, and inventory directly from the dashboard.</p>
                     </li>
-                    <li class="border-b border-gray-700 pb-4 embed-item">
+                    <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Holodeck // Mini-Games
@@ -242,7 +219,7 @@
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Boosts server interaction with integrated games. Activate games and set wager limits for NabCoins through the dashboard.</p>
                     </li>
-                    <li class="border-b border-gray-700 pb-4 embed-item">
+                    <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 GUARDIAN // Smart Moderation
@@ -352,11 +329,80 @@
         <!-- LICENSE Section -->
         <div class="max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <footer class="text-center">
-                <h2 class="text-xl font-bold text-white mb-2 glow-text">License</h2>
-                <p class="text-gray-400">This project is released under the Apache License 2.0.</p>
-                <img src="https://www.apache.org/images/asf_logo_wide_2017.svg" alt="Apache Software Foundation Logo" class="w-48 mx-auto mt-4 filter grayscale opacity-75">
+                <h2 class="text-xl font-bold text-white mb-2 glow-text">CONTACT // Join the Team</h2>
+                <p class="text-gray-400 mb-4">Are you a passionate developer or designer who wants to help build Nabula? For a better collaboration and communication, it's best if you speak German or Norwegian. Feel free to reach out to me on Discord!</p>
+                <p align="center"> 
+                  <a href="https://discord.com/users/592823845673631936">
+                    <img src="https://img.shields.io/badge/Discord-Peqperrr%237777-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Discord Badge" />
+                  </a>
+                </p>
             </footer>
         </div>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Starfield animation script
+            const canvas = document.getElementById('starfield');
+            const ctx = canvas.getContext('2d');
+            let stars = [];
+            const starCount = 800;
+
+            function setCanvasSize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function createStars() {
+                stars = [];
+                for (let i = 0; i < starCount; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        radius: Math.random() * 1.5,
+                        opacity: Math.random() * 0.5 + 0.5,
+                        twinkle: Math.random() * 0.05
+                    });
+                }
+            }
+
+            function drawStars() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#fff';
+                stars.forEach(star => {
+                    ctx.globalAlpha = star.opacity;
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+            }
+
+            function updateStars() {
+                stars.forEach(star => {
+                    star.opacity += star.twinkle;
+                    if (star.opacity > 1 || star.opacity < 0.5) {
+                        star.twinkle *= -1;
+                    }
+                    star.x += (Math.random() - 0.5) * 0.1;
+                    star.y += (Math.random() - 0.5) * 0.1;
+                });
+            }
+
+            function animate() {
+                updateStars();
+                drawStars();
+                requestAnimationFrame(animate);
+            }
+            
+            setCanvasSize();
+            createStars();
+            animate();
+            
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                createStars();
+            });
+        });
+    </script>
 </body>
 </html>
