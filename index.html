@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NABULA - Your Discord Server. Redefined.</title>
+    <title>NABULA - Ihr Discord-Server. Neu definiert.</title>
     <!-- Use a simple CDN to make the file fully self-contained -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -21,54 +21,70 @@
             --main-primary-color: #00F6FF;
             --main-secondary-color: #F72585;
             --embed-bg: rgba(10, 15, 20, 0.85);
-            --embed-border-color-1: #00F6FF;
-            --embed-border-color-2: #00FFFF;
-            --embed-border-color-3: #F72585;
-            --embed-border-color-4: #E6F1FF;
-            --glow-color: #00F6FF;
+            --embed-border-color-1: #ef4444;
+            --embed-border-color-2: #8b5cf6;
+            --embed-border-color-3: #3b82f6;
+            --embed-border-color-4: #ffffff;
+            --glow-color: #0ff;
             --progress-bg: #2d3748;
-            --progress-bar-start: #00F6FF;
-            --progress-bar-end: #F72585;
+            --progress-bar-start: #6b46c1;
+            --progress-bar-end: #805ad5;
             --font-family-main: 'Inter', sans-serif;
             --font-family-title: 'Orbitron', sans-serif;
             --heading-color: #ffffff;
             --heading-glow-color: #00bfff;
         }
+        
+        body {
+            transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+            font-family: var(--font-family-main);
+            color: var(--main-text-color);
+            background-color: var(--bg-color);
+            background-image:
+                linear-gradient(to right, rgba(160, 32, 240, 0.1), rgba(255, 0, 64, 0.05), transparent 50%);
+            background-size: 200% 100%;
+            background-repeat: no-repeat;
+            background-position: left;
+            overflow-x: hidden;
+        }
 
         /* Theme: NeoDark */
         body.theme-neodark {
-            --main-primary-color: #00F6FF;
-            --main-secondary-color: #F72585;
-            --main-accent-color: #00F6FF;
-            --main-text-color: #E6F1FF;
-            --embed-bg: rgba(10, 15, 20, 0.85);
-            --embed-border-color-1: #00F6FF;
-            --embed-border-color-2: #00FFFF;
-            --embed-border-color-3: #F72585;
-            --embed-border-color-4: #E6F1FF;
-            --glow-color: #00F6FF;
-            --progress-bar-start: #00F6FF;
-            --progress-bar-end: #F72585;
+            --embed-border-color-1: #ef4444;
+            --embed-border-color-2: #8b5cf6;
+            --embed-border-color-3: #3b82f6;
+            --embed-border-color-4: #ffffff;
+            --main-primary-color: #a020f0;
+            --main-secondary-color: #ff0040;
+            --main-accent-color: #00ffff;
+            --main-text-color: #e0e0e0;
+            --embed-bg: rgba(0, 0, 0, 0.8);
+            --embed-border: #4a4a4a;
+            --glow-color: #0ff;
+            --progress-bg: #2d3748;
+            --progress-bar-start: #6b46c1;
+            --progress-bar-end: #805ad5;
             --font-family-main: 'Inter', sans-serif;
-            --heading-color: #E6F1FF;
-            --heading-glow-color: #00F6FF;
+            --heading-color: #ffffff;
+            --heading-glow-color: #00bfff;
         }
         
         /* Theme: CrystalLight */
         body.theme-crystallight {
-            --main-primary-color: #007BFF;
-            --main-secondary-color: #212529;
-            --main-accent-color: #007BFF;
+            --embed-border-color-1: #63b3ed;
+            --embed-border-color-2: #38a169;
+            --embed-border-color-3: #a0aec0;
+            --embed-border-color-4: #ffffff;
+            --main-primary-color: #63b3ed;
+            --main-secondary-color: #38a169;
+            --main-accent-color: #a0aec0;
             --main-text-color: #212529;
             --embed-bg: rgba(255, 255, 255, 0.85);
-            --embed-border-color-1: #007BFF;
-            --embed-border-color-2: #212529;
-            --embed-border-color-3: #E9ECEF;
-            --embed-border-color-4: #007BFF;
-            --glow-color: #007BFF;
-            --progress-bg: #E9ECEF;
-            --progress-bar-start: #007BFF;
-            --progress-bar-end: #212529;
+            --embed-border: #e2e8f0;
+            --glow-color: #3182ce;
+            --progress-bg: #e2e8f0;
+            --progress-bar-start: #4299e1;
+            --progress-bar-end: #3182ce;
             --font-family-main: 'Montserrat', sans-serif;
             --heading-color: #212529;
             --heading-glow-color: transparent;
@@ -76,35 +92,37 @@
         
         /* Theme: RetroWave */
         body.theme-retrowave {
-            --main-primary-color: #FF00C1;
-            --main-secondary-color: #00FFFF;
-            --main-accent-color: #FF00C1;
-            --main-text-color: #F72585;
-            --embed-bg: rgba(44, 4, 59, 0.95);
             --embed-border-color-1: #FF00C1;
             --embed-border-color-2: #00FFFF;
             --embed-border-color-3: #FF00C1;
             --embed-border-color-4: #00FFFF;
+            --main-primary-color: #FF00C1;
+            --main-secondary-color: #00FFFF;
+            --main-accent-color: #FF00C1;
+            --main-text-color: #00FFFF;
+            --embed-bg: rgba(44, 4, 59, 0.95);
+            --embed-border: #FF00C1;
             --glow-color: #F72585;
             --progress-bg: #2C043B;
             --progress-bar-start: #FF00C1;
             --progress-bar-end: #00FFFF;
             --font-family-main: 'VT323', monospace;
             --heading-color: #00FFFF;
-            --heading-glow-color: #FF00C1;
+            --heading-glow-color: #F72585;
         }
 
         /* Theme: Midnight Nebula */
         body.theme-midnightnebula {
+            --embed-border-color-1: #FFD700;
+            --embed-border-color-2: #C0C0C0;
+            --embed-border-color-3: #FFD700;
+            --embed-border-color-4: #C0C0C0;
             --main-primary-color: #FFD700;
             --main-secondary-color: #C0C0C0;
             --main-accent-color: #FFD700;
             --main-text-color: #F0F8FF;
             --embed-bg: rgba(11, 12, 30, 0.85);
-            --embed-border-color-1: #FFD700;
-            --embed-border-color-2: #C0C0C0;
-            --embed-border-color-3: #FFD700;
-            --embed-border-color-4: #C0C0C0;
+            --embed-border: #1a1a1a;
             --glow-color: #FFD700;
             --progress-bg: #1a1a1a;
             --progress-bar-start: #FFD700;
@@ -124,13 +142,15 @@
             --main-secondary-color: #505050;
             --main-accent-color: #ffffff;
             --main-text-color: #e0e0e0;
+            --embed-bg: rgba(255, 255, 255, 0.85);
+            --embed-border: #a0a0a0;
             --glow-color: #ffffff;
             --progress-bg: #333;
             --progress-bar-start: #555;
             --progress-bar-end: #777;
             --font-family-main: 'Inter', sans-serif;
-            --heading-color: #ffffff;
-            --heading-glow-color: #a0a0a0;
+            --heading-color: #111111;
+            --heading-glow-color: transparent;
         }
         
         body {
@@ -230,7 +250,7 @@
 
         /* NABULA heading animation */
         .nabula-title {
-            font-family: var(--font-family-title);
+            font-family: 'Orbitron', sans-serif;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
             animation: title-glow 3s linear infinite alternate;
             transition: font-family 0.5s;
@@ -239,86 +259,6 @@
         @keyframes title-glow {
             from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; }
             to { text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff; }
-        }
-
-        /* Shooting star animation */
-        .shooting-star {
-            position: absolute;
-            background: linear-gradient(-45deg, #fff, transparent);
-            border-radius: 50%;
-            width: 5px;
-            height: 5px;
-            opacity: 0;
-            animation: shoot-star linear infinite;
-        }
-
-        @keyframes shoot-star {
-            0% {
-                transform: rotate(-45deg) translateX(0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: rotate(-45deg) translateX(200vw);
-                opacity: 0;
-            }
-        }
-        
-        /* Modal styles */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .modal-content {
-            position: relative;
-            background-color: var(--embed-bg);
-            border: 2px solid var(--embed-border);
-            border-radius: 1rem;
-            padding: 2rem;
-            max-width: 800px;
-            width: 90%;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        .modal-close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--main-text-color);
-            cursor: pointer;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Loading indicator for AI function */
-        .ai-loading-spinner {
-            border: 4px solid var(--progress-bg);
-            border-top: 4px solid var(--glow-color);
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -332,14 +272,30 @@
 
         <!-- Header Section -->
         <header class="text-center space-y-4 relative w-full">
+            <div id="language-switcher" class="absolute top-0 right-0 z-10 pulsating-frame rounded-2xl p-2">
+                <button id="lang-menu-button" type="button" class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium focus:outline-none">
+                    <span id="current-lang-text" class="text-white">DE</span>
+                    <svg class="-mr-1 ml-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div id="lang-menu" class="origin-top-right absolute right-0 mt-2 w-28 rounded-md shadow-lg bg-black ring-1 ring-white ring-opacity-5 hidden z-50">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="lang-menu-button">
+                        <button class="text-gray-200 block px-4 py-2 text-sm w-full text-left hover:bg-gray-800" role="menuitem" data-lang="de">Deutsch</button>
+                        <button class="text-gray-200 block px-4 py-2 text-sm w-full text-left hover:bg-gray-800" role="menuitem" data-lang="en">English</button>
+                        <button class="text-gray-200 block px-4 py-2 text-sm w-full text-left hover:bg-gray-800" role="menuitem" data-lang="nb">Norsk</button>
+                    </div>
+                </div>
+            </div>
+
             <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-wider nabula-title">
                 NABULA
             </h1>
             <p id="tagline-1" class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
-                The blueprint is complete, and the build has begun.
+                Der Bauplan ist fertiggestellt, der Bau hat begonnen.
             </p>
             <p id="tagline-2" class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
-                The next generation of Discord bots is here. Nabula is being built from the ground up to replace all other bots, giving your server members a fun, engaging, and active experience.
+                Die nächste Generation von Discord-Bots ist da. Nabula wird von Grund auf neu entwickelt, um alle anderen Bots zu ersetzen und Ihren Servermitgliedern ein unterhaltsames, fesselndes und aktives Erlebnis zu bieten.
             </p>
         </header>
 
@@ -349,71 +305,64 @@
         <!-- SYSTEM MODULES Section in its own pulsating frame -->
         <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section>
-                <h2 id="modules-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">BOT FUNCTIONS // FEATURES & CAPABILITIES</h2>
-                <p id="modules-subtitle" class="text-gray-400 mb-6">All modules are fully configurable through an intuitive web dashboard.</p>
+                <h2 id="modules-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">BOT-FUNKTIONEN // FEATURES & FÄHIGKEITEN</h2>
+                <p id="modules-subtitle" class="text-gray-400 mb-6">Alle Module sind über ein intuitives Web-Dashboard vollständig konfigurierbar.</p>
                 <ul class="space-y-6">
                     <li class="border-b border-gray-700 pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-voice-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
-                                🔹 Temporary Voice Channels
+                                🔹 Temporäre Sprachkanäle
                             </h3>
-                            <p id="module-voice-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-voice-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN ENTWICKLUNG ]</p>
                         </div>
-                        <p id="module-voice-desc" class="text-gray-400 text-sm mt-2">Allows members to dynamically create voice channels. The channel owner can manage limits, permissions, and visibility directly through a control panel sent to the voice chat upon creation.</p>
+                        <p id="module-voice-desc" class="text-gray-400 text-sm mt-2">Ermöglicht es Mitgliedern, dynamisch Sprachkanäle zu erstellen. Der Kanalinhaber kann Limits, Berechtigungen und Sichtbarkeit direkt über ein Kontrollpanel verwalten, das nach der Erstellung an den Sprachchat gesendet wird.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-banners-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
-                                🔹 Interactive Welcome Banners
+                                🔹 Interaktive Willkommensbanner
                             </h3>
-                            <p id="module-banners-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-banners-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN ENTWICKLUNG ]</p>
                         </div>
-                        <p id="module-banners-desc" class="text-gray-400 text-sm mt-2">Generates personalized banners with buttons and GIFs. Every detail, from the template to the text, is customizable via the dashboard.</p>
+                        <p id="module-banners-desc" class="text-gray-400 text-sm mt-2">Erstellt personalisierte Banner mit Schaltflächen und GIFs. Jedes Detail, von der Vorlage bis zum Text, kann über das Dashboard angepasst werden.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-leveling-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
-                                🔹 Dynamic Leveling System
+                                🔹 Dynamisches Leveling-System
                             </h3>
-                            <p id="module-leveling-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-leveling-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN ENTWICKLUNG ]</p>
                         </div>
-                        <p id="module-leveling-desc" class="text-gray-400 text-sm mt-2">An advanced XP protocol that rewards activity. XP rates, ranks, and automated role assignments are fully configured in the dashboard.</p>
+                        <p id="module-leveling-desc" class="text-gray-400 text-sm mt-2">Ein fortschrittliches XP-Protokoll, das Aktivität belohnt. XP-Raten, Ränge und automatische Rollenzuweisungen werden vollständig im Dashboard konfiguriert.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-economy-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🛒 Nabula Shop & Economy
                             </h3>
-                            <p id="module-economy-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-economy-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN ENTWICKLUNG ]</p>
                         </div>
-                        <p id="module-economy-desc" class="text-gray-400 text-sm mt-2">Implements \"NabCoins\" and a shop for digital goods. Create and manage items, prices, and inventory directly from the dashboard.</p>
+                        <p id="module-economy-desc" class="text-gray-400 text-sm mt-2">Implementiert „NabCoins“ und einen Shop für digitale Güter. Erstellen und verwalten Sie Gegenstände, Preise und Inventar direkt über das Dashboard.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-holodeck-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
-                                🔹 Holodeck // Mini-Games
+                                🔹 Holodeck // Mini-Spiele
                             </h3>
-                            <p id="module-holodeck-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-holodeck-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN ENTWICKLUNG ]</p>
                         </div>
-                        <p id="module-holodeck-desc" class="text-gray-400 text-sm mt-2">Boosts server interaction with integrated games. Activate games and set wager limits for NabCoins through the dashboard.</p>
+                        <p id="module-holodeck-desc" class="text-gray-400 text-sm mt-2">Steigert die Server-Interaktion mit integrierten Spielen. Aktivieren Sie Spiele und legen Sie Einsatzlimits für NabCoins über das Dashboard fest.</p>
                     </li>
                     <li class="border-b border-gray-70old pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-guardian-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
-                                🔹 GUARDIAN // Smart Moderation
+                                🔹 GUARDIAN // Smarte Moderation
                             </h3>
-                            <p id="module-guardian-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                            <p id="module-guardian-status" class="text-sm font-bold text-gray-500">[ ⚙️ IN ENTWICKLUNG ]</p>
                         </div>
-                        <p id="module-guardian-desc" class="text-gray-400 text-sm mt-2">An autonomous moderation agent with an adaptive word filter and anti-spam. All rules and filters are centrally managed in the dashboard.</p>
+                        <p id="module-guardian-desc" class="text-gray-400 text-sm mt-2">Ein autonomer Moderations-Agent mit einem adaptiven Wortfilter und Anti-Spam. Alle Regeln und Filter werden zentral im Dashboard verwaltet.</p>
                     </li>
                     <li class="embed-item">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                            <h3 id="module-more-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
-                                💠 And many more modules are on the way...
-                            </h3>
-                            <p id="module-more-status" class="text-sm font-bold text-red-500">[CLASSIFIED]</p>
-                        </div>
-                        <p id="classified-module-container" class="text-gray-400 text-sm mt-2">The features listed are just the beginning. We're building some groundbreaking new systems that are still under wraps. // Stay tuned. It's going to be wild.</p>
                         <div class="flex justify-center mt-4">
                             <button id="show-ai-modal-btn" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:from-purple-700 hover:to-blue-600 transition-all duration-300">
                                 ✨ Show AI Bot Potential
@@ -536,7 +485,7 @@
         <!-- LICENSE Section -->
         <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <footer class="text-center">
-                <h2 id="contact-title" class="text-xl font-bold text-white mb-2 glow-text">CONTACT // Join the Team</h2>
+                <h2 id="contact-title" class="text-xl font-bold mb-2 glow-text">CONTACT // Join the Team</h2>
                 <p id="contact-text-1" class="text-gray-400 mb-4">Are you a passionate developer or designer who wants to help build Nabula? For a better collaboration and communication, it's best if you speak German or Norwegian. Feel free to reach out to me on Discord!</p>
                 <div class="flex flex-wrap justify-center items-center gap-4 mt-8"> 
                     <a href="https://discord.gg/GK6pHmNMpd">
@@ -556,7 +505,7 @@
             <button id="modal-close-btn" class="modal-close-btn">
                 &times;
             </button>
-            <h3 id="modal-title" class="text-2xl font-bold text-white mb-4 glow-text"></h3>
+            <h3 id="modal-title" class="text-2xl font-bold mb-4 glow-text"></h3>
             <div id="ai-modal-content" class="text-gray-400">
                 <!-- AI content will be loaded here -->
             </div>
@@ -762,6 +711,25 @@
                     }
                 }
             }
+
+            // Language switcher logic
+            const langMenuButton = document.getElementById('lang-menu-button');
+            const langMenu = document.getElementById('lang-menu');
+            const currentLangText = document.getElementById('current-lang-text');
+            
+            langMenuButton.addEventListener('click', () => {
+                langMenu.classList.toggle('hidden');
+            });
+
+            langMenu.querySelectorAll('[data-lang]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const lang = e.target.getAttribute('data-lang');
+                    currentLangText.textContent = lang.toUpperCase();
+                    applyTranslation(lang);
+                    localStorage.setItem('nabulaLang', lang);
+                    langMenu.classList.add('hidden');
+                });
+            });
 
             // Theme switcher logic
             const themeButtons = document.querySelectorAll('.theme-button');
