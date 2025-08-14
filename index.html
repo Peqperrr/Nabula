@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -12,154 +12,24 @@
         @import url('https://fonts.googleapis.com/css2?family=Lazer84&family=VT323&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
 
-        /* Root variables for theming */
-        :root {
-            --bg-color: #000;
-            --main-text-color: #E6F1FF;
-            --main-accent-color: #00F6FF;
-            --main-primary-color: #00F6FF;
-            --main-secondary-color: #F72585;
-            --embed-bg: rgba(10, 15, 20, 0.85);
-            --embed-border-color-1: #ef4444;
-            --embed-border-color-2: #8b5cf6;
-            --embed-border-color-3: #3b82f6;
-            --embed-border-color-4: #ffffff;
-            --glow-color: #0ff;
-            --progress-bg: #2d3748;
-            --progress-bar-start: #6b46c1;
-            --progress-bar-end: #805ad5;
-            --font-family-main: 'Inter', sans-serif;
-            --font-family-title: 'Orbitron', sans-serif;
-            --heading-color: #ffffff;
-            --heading-glow-color: #00bfff;
-        }
-        
+        /* Global styles that are not affected by themes */
         body {
-            transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
-            font-family: var(--font-family-main);
-            color: var(--main-text-color);
-            background-color: var(--bg-color);
+            background-color: #000;
             background-image:
                 linear-gradient(to right, rgba(160, 32, 240, 0.1), rgba(255, 0, 64, 0.05), transparent 50%);
             background-size: 200% 100%;
             background-repeat: no-repeat;
             background-position: left;
             overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #E6F1FF;
         }
 
-        /* Theme: NeoDark */
-        body.theme-neodark {
-            --embed-border-color-1: #ef4444;
-            --embed-border-color-2: #8b5cf6;
-            --embed-border-color-3: #3b82f6;
-            --embed-border-color-4: #ffffff;
-            --main-primary-color: #a020f0;
-            --main-secondary-color: #ff0040;
-            --main-accent-color: #00ffff;
-            --main-text-color: #e0e0e0;
-            --embed-bg: rgba(0, 0, 0, 0.8);
-            --embed-border: #4a4a4a;
-            --glow-color: #0ff;
-            --progress-bg: #2d3748;
-            --progress-bar-start: #6b46c1;
-            --progress-bar-end: #805ad5;
-            --font-family-main: 'Inter', sans-serif;
-            --heading-color: #ffffff;
-            --heading-glow-color: #00bfff;
-        }
-        
-        /* Theme: CrystalLight */
-        body.theme-crystallight {
-            --embed-border-color-1: #63b3ed;
-            --embed-border-color-2: #38a169;
-            --embed-border-color-3: #a0aec0;
-            --embed-border-color-4: #ffffff;
-            --main-primary-color: #63b3ed;
-            --main-secondary-color: #38a169;
-            --main-accent-color: #a0aec0;
-            --main-text-color: #212529;
-            --embed-bg: rgba(255, 255, 255, 0.85);
-            --embed-border: #e2e8f0;
-            --glow-color: #3182ce;
-            --progress-bg: #e2e8f0;
-            --progress-bar-start: #4299e1;
-            --progress-bar-end: #3182ce;
-            --font-family-main: 'Montserrat', sans-serif;
-            --heading-color: #212529;
-            --heading-glow-color: transparent;
-        }
-        
-        /* Theme: RetroWave */
-        body.theme-retrowave {
-            --embed-border-color-1: #FF00C1;
-            --embed-border-color-2: #00FFFF;
-            --embed-border-color-3: #FF00C1;
-            --embed-border-color-4: #00FFFF;
-            --main-primary-color: #FF00C1;
-            --main-secondary-color: #00FFFF;
-            --main-accent-color: #FF00C1;
-            --main-text-color: #00FFFF;
-            --embed-bg: rgba(44, 4, 59, 0.95);
-            --embed-border: #FF00C1;
-            --glow-color: #F72585;
-            --progress-bg: #2C043B;
-            --progress-bar-start: #FF00C1;
-            --progress-bar-end: #00FFFF;
-            --font-family-main: 'VT323', monospace;
-            --heading-color: #00FFFF;
-            --heading-glow-color: #F72585;
-        }
-
-        /* Theme: Midnight Nebula */
-        body.theme-midnightnebula {
-            --embed-border-color-1: #FFD700;
-            --embed-border-color-2: #C0C0C0;
-            --embed-border-color-3: #FFD700;
-            --embed-border-color-4: #C0C0C0;
-            --main-primary-color: #FFD700;
-            --main-secondary-color: #C0C0C0;
-            --main-accent-color: #FFD700;
-            --main-text-color: #F0F8FF;
-            --embed-bg: rgba(11, 12, 30, 0.85);
-            --embed-border: #1a1a1a;
-            --glow-color: #FFD700;
-            --progress-bg: #1a1a1a;
-            --progress-bar-start: #FFD700;
-            --progress-bar-end: #C0C0C0;
-            --font-family-main: 'Lato', sans-serif;
-            --heading-color: #F0F8FF;
-            --heading-glow-color: #FFD700;
-        }
-
-        /* Theme: Minimal Clean */
-        body.theme-minimalclean {
-            --embed-border-color-1: #a0a0a0;
-            --embed-border-color-2: #505050;
-            --embed-border-color-3: #444;
-            --embed-border-color-4: #ffffff;
-            --main-primary-color: #a0a0a0;
-            --main-secondary-color: #505050;
-            --main-accent-color: #ffffff;
-            --main-text-color: #e0e0e0;
-            --embed-bg: rgba(255, 255, 255, 0.85);
-            --embed-border: #a0a0a0;
-            --glow-color: #ffffff;
-            --progress-bg: #333;
-            --progress-bar-start: #555;
-            --progress-bar-end: #777;
-            --font-family-main: 'Inter', sans-serif;
-            --heading-color: #111111;
-            --heading-glow-color: transparent;
-        }
-        
-        body {
-            font-family: var(--font-family-main);
-            color: var(--main-text-color);
-            background-color: var(--bg-color);
-            transition: all 0.5s ease-in-out;
-        }
-        
         /* The starfield canvas */
         #starfield {
             position: fixed;
@@ -169,7 +39,7 @@
             height: 100%;
             z-index: -1;
         }
-        
+
         /* Keyframes for the pulsating border animation */
         @keyframes pulsating-border {
             0%   { box-shadow: 0 0 10px 5px var(--embed-border-color-1); border-color: var(--embed-border-color-1); }
@@ -182,8 +52,120 @@
         .pulsating-frame {
             border: 2px solid;
             animation: pulsating-border 5s linear infinite;
-            background-color: var(--embed-bg);
             transition: all 0.5s ease-in-out;
+        }
+        
+        /* The container that will be themed */
+        .custom-embed {
+            background-color: var(--embed-bg);
+            color: var(--main-text-color);
+            font-family: var(--font-family-main);
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* Theme: NeoDark */
+        .theme-neodark .custom-embed {
+            --embed-bg: rgba(45, 55, 72, 0.85);
+            --main-text-color: #e0e0e0;
+            --main-primary-color: #000033; /* Tiefes Mitternachtsblau */
+            --main-secondary-color: #39ff14; /* Neongrün */
+            --main-accent-color: #C0C0C0; /* Kühles Silber */
+            --embed-border-color-1: #000033;
+            --embed-border-color-2: #39ff14;
+            --embed-border-color-3: #C0C0C0;
+            --embed-border-color-4: #5a5a5a;
+            --glow-color: #39ff14;
+            --progress-bg: #2d3748;
+            --progress-bar-start: #000033;
+            --progress-bar-end: #39ff14;
+            --font-family-main: 'Poppins', sans-serif;
+            --font-family-title: 'Montserrat', sans-serif;
+            --heading-color: #C0C0C0;
+            --heading-glow-color: #39ff14;
+        }
+        
+        /* Theme: CrystalLight */
+        .theme-crystallight .custom-embed {
+            --embed-bg: rgba(240, 248, 255, 0.9);
+            --main-text-color: #808080; /* Mittleres Grau */
+            --main-primary-color: #AEEEEE; /* Helles Eisblau */
+            --main-secondary-color: #E6E6FA; /* Zarter Lavendel */
+            --main-accent-color: #FFC0CB; /* Durchscheinendes Rosa */
+            --embed-border-color-1: #AEEEEE;
+            --embed-border-color-2: #E6E6FA;
+            --embed-border-color-3: #FFC0CB;
+            --embed-border-color-4: #B0E0E6;
+            --glow-color: #AEEEEE;
+            --progress-bg: #e2e8f0;
+            --progress-bar-start: #AEEEEE;
+            --progress-bar-end: #E6E6FA;
+            --font-family-main: 'Open Sans', sans-serif;
+            --font-family-title: 'Lato', sans-serif;
+            --heading-color: #B0E0E6; /* Sanftes Eisblau */
+            --heading-glow-color: transparent;
+        }
+        
+        /* Theme: RetroWave */
+        .theme-retrowave .custom-embed {
+            --embed-bg: rgba(25, 25, 112, 0.85);
+            --main-text-color: #40E0D0; /* Elektrisches Türkis */
+            --main-primary-color: #FF007F; /* Leuchtendes Pink */
+            --main-secondary-color: #40E0D0; /* Elektrisches Türkis */
+            --main-accent-color: #8A2BE2; /* Warmes Lila */
+            --embed-border-color-1: #FF007F;
+            --embed-border-color-2: #40E0D0;
+            --embed-border-color-3: #8A2BE2;
+            --embed-border-color-4: #FF007F;
+            --glow-color: #FF007F;
+            --progress-bg: #2C043B;
+            --progress-bar-start: #FF007F;
+            --progress-bar-end: #40E0D0;
+            --font-family-main: 'Roboto', sans-serif;
+            --font-family-title: "'Bebas Neue', cursive";
+            --heading-color: #FF007F;
+            --heading-glow-color: #40E0D0;
+        }
+
+        /* Theme: Midnight Nebula */
+        .theme-midnightnebula .custom-embed {
+            --embed-bg: rgba(49, 24, 78, 0.85);
+            --main-text-color: #FFFDD0; /* Creme */
+            --main-primary-color: #FFD700; /* Glänzendes Gold */
+            --main-secondary-color: #FF00FF; /* Schimmerndes Magenta */
+            --main-accent-color: #0F52BA; /* Saphirblau */
+            --embed-border-color-1: #FFD700;
+            --embed-border-color-2: #FF00FF;
+            --embed-border-color-3: #0F52BA;
+            --embed-border-color-4: #FFD700;
+            --glow-color: #FFD700;
+            --progress-bg: #2b004a;
+            --progress-bar-start: #FFD700;
+            --progress-bar-end: #FF00FF;
+            --font-family-main: 'Lato', sans-serif;
+            --font-family-title: "'Playfair Display', serif";
+            --heading-color: #FFD700;
+            --heading-glow-color: #FF00FF;
+        }
+
+        /* Theme: Minimal Clean */
+        .theme-minimalclean .custom-embed {
+            --embed-bg: rgba(255, 255, 255, 0.9);
+            --main-text-color: #36454F; /* Dunkles Grau */
+            --main-primary-color: #E2725B; /* Gedämpftes Terrakotta */
+            --main-secondary-color: #808000; /* Sanftes Olivgrün */
+            --main-accent-color: #36454F; /* Dunkles Grau */
+            --embed-border-color-1: #E2725B;
+            --embed-border-color-2: #808000;
+            --embed-border-color-3: #a9a9a9;
+            --embed-border-color-4: #E2725B;
+            --glow-color: #E2725B;
+            --progress-bg: #e0e0e0;
+            --progress-bar-start: #E2725B;
+            --progress-bar-end: #808000;
+            --font-family-main: "'Source Sans Pro', sans-serif";
+            --font-family-title: "'Helvetica Neue', sans-serif";
+            --heading-color: #654321; /* Erdiges Braun */
+            --heading-glow-color: transparent;
         }
         
         /* Embed cool hover effect */
@@ -234,8 +216,9 @@
         /* Cool text shadow effect for headings */
         .glow-text {
             color: var(--heading-color);
+            font-family: var(--font-family-title);
             text-shadow: 0 0 5px var(--heading-glow-color), 0 0 10px var(--heading-glow-color), 0 0 15px var(--heading-glow-color);
-            transition: text-shadow 0.5s, color 0.5s;
+            transition: text-shadow 0.5s, color 0.5s, font-family 0.5s;
         }
         
         /* Language logo styling */
@@ -260,6 +243,11 @@
             from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; }
             to { text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff; }
         }
+
+        .bright-red-text {
+            color: #FF0000 !important; /* Knallrot */
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="theme-neodark">
@@ -272,7 +260,7 @@
 
         <!-- Header Section -->
         <header class="text-center space-y-4 relative w-full">
-            <div id="language-switcher" class="absolute top-0 right-0 z-10 pulsating-frame rounded-2xl p-2">
+            <div id="language-switcher" class="custom-embed pulsating-frame absolute top-0 right-0 z-10 rounded-2xl p-2">
                 <button id="lang-menu-button" type="button" class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium focus:outline-none">
                     <span id="current-lang-text" class="text-white">DE</span>
                     <svg class="-mr-1 ml-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -283,7 +271,7 @@
                     <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="lang-menu-button">
                         <button class="text-gray-200 block px-4 py-2 text-sm w-full text-left hover:bg-gray-800" role="menuitem" data-lang="de">Deutsch</button>
                         <button class="text-gray-200 block px-4 py-2 text-sm w-full text-left hover:bg-gray-800" role="menuitem" data-lang="en">English</button>
-                        <button class="text-gray-200 block px-4 py-2 text-sm w-full text-left hover:bg-gray-800" role="menuitem" data-lang="nb">Norsk</button>
+                        <button class="text-gray-200 block px-4 py-2 text-sm w-full text-left hover:bg-gray-800" role="menuitem" data-lang="no">Norsk</button>
                     </div>
                 </div>
             </div>
@@ -303,7 +291,7 @@
         <div class="w-full h-px bg-gray-600 my-8"></div>
 
         <!-- SYSTEM MODULES Section in its own pulsating frame -->
-        <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+        <div class="custom-embed pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section>
                 <h2 id="modules-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">BOT-FUNKTIONEN // FEATURES & FÄHIGKEITEN</h2>
                 <p id="modules-subtitle" class="text-gray-400 mb-6">Alle Module sind über ein intuitives Web-Dashboard vollständig konfigurierbar.</p>
@@ -317,7 +305,7 @@
                         </div>
                         <p id="module-voice-desc" class="text-gray-400 text-sm mt-2">Ermöglicht es Mitgliedern, dynamisch Sprachkanäle zu erstellen. Der Kanalinhaber kann Limits, Berechtigungen und Sichtbarkeit direkt über ein Kontrollpanel verwalten, das nach der Erstellung an den Sprachchat gesendet wird.</p>
                     </li>
-                    <li class="border-b border-gray-70old pb-4 embed-item">
+                    <li class="border-b border-gray-700 pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-banners-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Interaktive Willkommensbanner
@@ -326,7 +314,7 @@
                         </div>
                         <p id="module-banners-desc" class="text-gray-400 text-sm mt-2">Erstellt personalisierte Banner mit Schaltflächen und GIFs. Jedes Detail, von der Vorlage bis zum Text, kann über das Dashboard angepasst werden.</p>
                     </li>
-                    <li class="border-b border-gray-70old pb-4 embed-item">
+                    <li class="border-b border-gray-700 pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-leveling-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Dynamisches Leveling-System
@@ -335,7 +323,7 @@
                         </div>
                         <p id="module-leveling-desc" class="text-gray-400 text-sm mt-2">Ein fortschrittliches XP-Protokoll, das Aktivität belohnt. XP-Raten, Ränge und automatische Rollenzuweisungen werden vollständig im Dashboard konfiguriert.</p>
                     </li>
-                    <li class="border-b border-gray-70old pb-4 embed-item">
+                    <li class="border-b border-gray-700 pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-economy-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🛒 Nabula Shop & Economy
@@ -344,7 +332,7 @@
                         </div>
                         <p id="module-economy-desc" class="text-gray-400 text-sm mt-2">Implementiert „NabCoins“ und einen Shop für digitale Güter. Erstellen und verwalten Sie Gegenstände, Preise und Inventar direkt über das Dashboard.</p>
                     </li>
-                    <li class="border-b border-gray-70old pb-4 embed-item">
+                    <li class="border-b border-gray-700 pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-holodeck-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 Holodeck // Mini-Spiele
@@ -353,7 +341,7 @@
                         </div>
                         <p id="module-holodeck-desc" class="text-gray-400 text-sm mt-2">Steigert die Server-Interaktion mit integrierten Spielen. Aktivieren Sie Spiele und legen Sie Einsatzlimits für NabCoins über das Dashboard fest.</p>
                     </li>
-                    <li class="border-b border-gray-70old pb-4 embed-item">
+                    <li class="border-b border-gray-700 pb-4 embed-item">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                             <h3 id="module-guardian-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
                                 🔹 GUARDIAN // Smarte Moderation
@@ -363,11 +351,13 @@
                         <p id="module-guardian-desc" class="text-gray-400 text-sm mt-2">Ein autonomer Moderations-Agent mit einem adaptiven Wortfilter und Anti-Spam. Alle Regeln und Filter werden zentral im Dashboard verwaltet.</p>
                     </li>
                     <li class="embed-item">
-                        <div class="flex justify-center mt-4">
-                            <button id="show-ai-modal-btn" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:from-purple-700 hover:to-blue-600 transition-all duration-300">
-                                ✨ Show AI Bot Potential
-                            </button>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                            <h3 id="module-more-title" class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                                💠 And many more modules are on the way...
+                            </h3>
+                            <p id="module-more-status" class="text-sm font-bold bright-red-text">[CLASSIFIED]</p>
                         </div>
+                        <p id="module-more-desc" class="text-gray-400 text-sm mt-2">The features listed are just the beginning. We're building some groundbreaking new systems that are still under wraps. // Stay tuned. It's going to be wild.</p>
                     </li>
                 </ul>
             </section>
@@ -377,7 +367,7 @@
         <div class="w-full h-px bg-gray-600 my-8"></div>
 
         <!-- DEVELOPMENT LOG Section in its own pulsating frame -->
-        <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+        <div class="custom-embed pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section>
                 <h2 id="devlog-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">DEVELOPMENT LOG // Active Workstreams</h2>
                 <div class="space-y-8">
@@ -413,7 +403,7 @@
         <div class="w-full h-px bg-gray-600 my-8"></div>
 
         <!-- New section for team/collaboration -->
-        <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+        <div class="custom-embed pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section class="text-center">
                 <h2 id="community-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">COMMUNITY // Join the Team</h2>
                 <p id="community-text-1" class="text-lg text-gray-400 mb-4">
@@ -455,10 +445,13 @@
         <div class="w-full h-px bg-gray-600 my-8"></div>
 
         <!-- VISUAL SKINS Section -->
-        <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+        <div class="custom-embed pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <section>
                 <h2 id="skins-title" class="text-2xl sm:text-3xl font-bold mb-6 glow-text">VISUAL SKINS // UI Themes</h2>
-                <p id="skins-subtitle" class="text-gray-400 mb-6">Customize Nabula's visual output to match your community's aesthetic. <span style="color: #ff0000; font-weight: bold;">Click on a theme to apply it!</span></p>
+                <p class="text-gray-400 mb-6">
+                    <span id="skins-subtitle-1"></span>
+                    <span id="skins-subtitle-2" class="bright-red-text"></span>
+                </p>
                 <ul id="visual-skins-list" class="space-y-4 font-light text-lg">
                     <li class="embed-item cursor-pointer theme-button" data-theme="neodark">
                         <span class="text-purple-400">🎨 [ NeoDark ]</span> — Futuristic & clean.
@@ -483,7 +476,7 @@
         <div class="w-full h-px bg-gray-600 my-8"></div>
 
         <!-- LICENSE Section -->
-        <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+        <div class="custom-embed pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
             <footer class="text-center">
                 <h2 id="contact-title" class="text-xl font-bold mb-2 glow-text">CONTACT // Join the Team</h2>
                 <p id="contact-text-1" class="text-gray-400 mb-4">Are you a passionate developer or designer who wants to help build Nabula? For a better collaboration and communication, it's best if you speak German or Norwegian. Feel free to reach out to me on Discord!</p>
@@ -499,22 +492,6 @@
         </div>
     </div>
     
-    <!-- AI Modal -->
-    <div id="ai-modal" class="modal hidden">
-        <div class="modal-content pulsating-frame">
-            <button id="modal-close-btn" class="modal-close-btn">
-                &times;
-            </button>
-            <h3 id="modal-title" class="text-2xl font-bold mb-4 glow-text"></h3>
-            <div id="ai-modal-content" class="text-gray-400">
-                <!-- AI content will be loaded here -->
-            </div>
-            <div id="ai-loading-indicator" class="mt-4 flex justify-center hidden">
-                <div class="ai-loading-spinner"></div>
-            </div>
-        </div>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const translations = {
@@ -543,7 +520,7 @@
                     moduleGuardianDesc: "An autonomous moderation agent with an adaptive word filter and anti-spam. All rules and filters are centrally managed in the dashboard.",
                     moduleMoreTitle: "💠 And many more modules are on the way...",
                     moduleMoreStatus: "[CLASSIFIED]",
-                    classifiedModuleContainer: "The features listed are just the beginning. We're building some groundbreaking new systems that are still under wraps. // Stay tuned. It's going to be wild.",
+                    moduleMoreDesc: "The features listed are just the beginning. We're building some groundbreaking new systems that are still under wraps. // Stay tuned. It's going to be wild.",
                     devlogTitle: "DEVELOPMENT LOG // Active Workstreams",
                     devlogWebsiteTitle: "[ WEBSITE & DASHBOARD ]",
                     devlogWebsiteDesc: "Building the web interface for bot configuration and analytics.",
@@ -556,13 +533,12 @@
                     communityText2: "To make this platform a reality—to make it fully functional and accessible to the public—I'm looking for help to complete everything.",
                     communityText3: "I'm looking to build a dedicated team of creators and coders who share this vision. If you're passionate about redefining Discord servers and want to contribute to a groundbreaking project, let's build this future together.",
                     skinsTitle: "VISUAL SKINS // UI Themes",
-                    skinsSubtitle: "Customize Nabula's visual output to match your community's aesthetic. Click on a theme to apply it!",
+                    skinsSubtitle1: "Customize Nabula's visual output to match your community's aesthetic. ",
+                    skinsSubtitle2: "Click on a theme to apply it!",
                     contactTitle: "CONTACT // Join the Team",
                     contactText1: "Are you a passionate developer or designer who wants to help build Nabula? For a better collaboration and communication, it's best if you speak German or Norwegian. Feel free to reach out to me on Discord!",
                     themeText: "Theme",
                     langText: "Language",
-                    aiModalTitle: "Unleashing NABULA's Potential",
-                    aiModalText: "NABULA is more than just a bot; it's a vision for the future of Discord. Its modular architecture and intelligent core allow for limitless expansion, from AI-driven moderation to fully immersive, personalized community experiences. The potential is vast, and with a dedicated team, we can turn this blueprint into the definitive Discord platform."
                 },
                 de: {
                     tagline1: "Der Bauplan ist fertiggestellt, der Bau hat begonnen.",
@@ -589,7 +565,7 @@
                     moduleGuardianDesc: "Ein autonomer Moderations-Agent mit einem adaptiven Wortfilter und Anti-Spam. Alle Regeln und Filter werden zentral im Dashboard verwaltet.",
                     moduleMoreTitle: "💠 Und viele weitere Module sind auf dem Weg...",
                     moduleMoreStatus: "[GEHEIM]",
-                    classifiedModuleContainer: "Die aufgeführten Features sind nur der Anfang. Wir entwickeln einige bahnbrechende neue Systeme, die noch unter Verschluss gehalten werden. // Bleiben Sie dran. Es wird wild werden.",
+                    moduleMoreDesc: "Die aufgeführten Features sind nur der Anfang. Wir entwickeln einige bahnbrechende neue Systeme, die noch unter Verschluss gehalten werden. // Bleiben Sie dran. Es wird wild werden.",
                     devlogTitle: "ENTWICKLUNGSLOG // Aktive Arbeitsschritte",
                     devlogWebsiteTitle: "[ WEBSEITE & DASHBOARD ]",
                     devlogWebsiteDesc: "Entwicklung der Weboberfläche für die Bot-Konfiguration und -Analyse.",
@@ -602,15 +578,14 @@
                     communityText2: "Um diese Plattform zur Realität zu machen – um sie voll funktionsfähig und für die Öffentlichkeit zugänglich zu machen – suche ich nach Hilfe, um alles fertigzustellen.",
                     communityText3: "Ich möchte ein engagiertes Team von Kreativen und Codern aufbauen, die diese Vision teilen. Wenn Sie leidenschaftlich daran interessiert sind, Discord-Server neu zu definieren und zu einem bahnbrechenden Projekt beizutragen, lassen Sie uns diese Zukunft gemeinsam aufbauen.",
                     skinsTitle: "VISUELLE SKINS // UI-Themen",
-                    skinsSubtitle: "Passen Sie die visuelle Ausgabe von Nabula an die Ästhetik Ihrer Community an. Klicken Sie auf ein Thema, um es anzuwenden!",
+                    skinsSubtitle1: "Passen Sie die visuelle Ausgabe von Nabula an die Ästhetik Ihrer Community an. ",
+                    skinsSubtitle2: "Klicken Sie auf ein Thema, um es anzuwenden!",
                     contactTitle: "KONTAKT // Werde Teil des Teams",
                     contactText1: "Sind Sie ein leidenschaftlicher Entwickler oder Designer, der beim Aufbau von Nabula helfen möchte? Für eine bessere Zusammenarbeit und Kommunikation ist es am besten, wenn Sie Deutsch oder Norwegisch sprechen. Kontaktieren Sie mich gerne auf Discord!",
                     themeText: "Thema",
                     langText: "Sprache",
-                    aiModalTitle: "Das Potenzial von NABULA entfesseln",
-                    aiModalText: "NABULA ist mehr als nur ein Bot; es ist eine Vision für die Zukunft von Discord. Seine modulare Architektur und der intelligente Kern ermöglichen eine grenzenlose Erweiterung, von KI-gesteuerter Moderation bis hin zu vollständig immersiven, personalisierten Community-Erlebnissen. Das Potenzial ist riesig, und mit einem engagierten Team können wir diesen Bauplan in die ultimative Discord-Plattform verwandeln."
                 },
-                nb: {
+                no: {
                     tagline1: "Blåkopi er fullført, byggingen har begynt.",
                     tagline2: "Neste generasjon av Discord-roboter er her. Nabula bygges fra grunnen av for å erstatte alle andre roboter, og gir servermedlemmene dine en morsom, engasjerende og aktiv opplevelse.",
                     modulesTitle: "BOT-FUNKSJONER // FUNKSJONER OG KAPASITETER",
@@ -635,7 +610,7 @@
                     moduleGuardianDesc: "En autonom modereringsagent med et adaptivt ordfilter og anti-spam. Alle regler og filtre administreres sentralt i dashboardet.",
                     moduleMoreTitle: "💠 Og mange flere moduler er på vei...",
                     moduleMoreStatus: "[KLASSIFISERT]",
-                    classifiedModuleContainer: "Funksjonene som er oppført er bare begynnelsen. Vi bygger noen banebrytende nye systemer som fortsatt holdes hemmelige. // Følg med. Det kommer til å bli vilt.",
+                    moduleMoreDesc: "Funksjonene som er oppført er bare begynnelsen. Vi bygger noen banebrytende nye systemer som fortsatt holdes hemmelige. // Følg med. Det kommer til å bli vilt.",
                     devlogTitle: "UTVIKLINGSLOGG // Aktive arbeidsstrømmer",
                     devlogWebsiteTitle: "[ NETTSIDE OG DASHBOARD ]",
                     devlogWebsiteDesc: "Bygger webgrensesnitt for bot-konfigurasjon og analyse.",
@@ -648,13 +623,12 @@
                     communityText2: "For å gjøre denne plattformen til virkelighet – for å gjøre den fullt funksjonell og tilgjengelig for publikum – ser jeg etter hjelp til å fullføre alt.",
                     communityText3: "Jeg ønsker å bygge et dedikert team av skapere og kodere som deler denne visjonen. Hvis du brenner for å omdefinere Discord-servere og ønsker å bidra til et banebrytende prosjekt, la oss bygge denne fremtiden sammen.",
                     skinsTitle: "VISUELLE SKINN // UI-temaer",
-                    skinsSubtitle: "Tilpass Nabulas visuelle utgang til samfunnets estetikk. Klikk på et tema for å bruke det!",
+                    skinsSubtitle1: "Tilpass Nabulas visuelle utgang til samfunnets estetikk. ",
+                    skinsSubtitle2: "Klikk på et tema for å bruke det!",
                     contactTitle: "KONTAKT // Bli med på teamet",
                     contactText1: "Er du en lidenskapelig utvikler eller designer som vil bidra til å bygge Nabula? For bedre samarbeid og kommunikasjon er det best om du snakker tysk oder norwegisch. Ta gjerne kontakt med meg på Discord!",
                     themeText: "Tema",
                     langText: "Språk",
-                    aiModalTitle: "Slipp løs NABULAs potensial",
-                    aiModalText: "NABULA er mer enn bare en bot; det er en visjon for fremtiden til Discord. Den modulære arkitekturen og intelligente kjernen åpner for ubegrenset utvidelse, fra AI-drevet moderering til fullt oppslukende, personlige samfunnsopplevelser. Potensialet er enormt, og med et dedikert team kan vi gjøre denne blåkopi til den definitive Discord-plattformen."
                 }
             };
             
@@ -683,7 +657,7 @@
                 moduleGuardianDesc: document.getElementById('module-guardian-desc'),
                 moduleMoreTitle: document.getElementById('module-more-title'),
                 moduleMoreStatus: document.getElementById('module-more-status'),
-                classifiedModuleContainer: document.getElementById('classified-module-container'),
+                moduleMoreDesc: document.getElementById('module-more-desc'),
                 devlogTitle: document.getElementById('devlog-title'),
                 devlogWebsiteTitle: document.getElementById('devlog-website-title'),
                 devlogWebsiteDesc: document.getElementById('devlog-website-desc'),
@@ -696,7 +670,8 @@
                 communityText2: document.getElementById('community-text-2'),
                 communityText3: document.getElementById('community-text-3'),
                 skinsTitle: document.getElementById('skins-title'),
-                skinsSubtitle: document.getElementById('skins-subtitle'),
+                skinsSubtitle1: document.getElementById('skins-subtitle-1'),
+                skinsSubtitle2: document.getElementById('skins-subtitle-2'),
                 contactTitle: document.getElementById('contact-title'),
                 contactText1: document.getElementById('contact-text-1')
             };
@@ -738,77 +713,19 @@
             themeButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
                     const theme = e.currentTarget.getAttribute('data-theme');
-                    body.className = '';
+                    // Remove previous theme classes before adding the new one
+                    body.className = body.className.replace(/theme-\w+/g, '');
                     body.classList.add(`theme-${theme}`);
                     localStorage.setItem('nabulaTheme', theme);
                 });
             });
 
             // Load saved preferences
-            const savedLang = localStorage.getItem('nabulaLang') || 'en';
+            const savedLang = localStorage.getItem('nabulaLang') || 'de';
+            currentLangText.textContent = savedLang.toUpperCase();
             applyTranslation(savedLang);
             const savedTheme = localStorage.getItem('nabulaTheme') || 'neodark';
             body.classList.add(`theme-${savedTheme}`);
-
-            // AI Modal Logic
-            const showAiModalBtn = document.getElementById('show-ai-modal-btn');
-            const aiModal = document.getElementById('ai-modal');
-            const aiModalContent = document.getElementById('ai-modal-content');
-            const modalTitle = document.getElementById('modal-title');
-            const modalCloseBtn = document.getElementById('modal-close-btn');
-
-            showAiModalBtn.addEventListener('click', async () => {
-                aiModal.classList.remove('hidden');
-                const aiLoadingIndicator = document.getElementById('ai-loading-indicator');
-                aiLoadingIndicator.classList.remove('hidden');
-
-                const lang = localStorage.getItem('nabulaLang') || 'en';
-                const prompt = `Generate a text in a modern, elegant style about the great potential of a Discord bot named Nabula. Explain that its modular architecture and intelligent core make it more than a simple bot, but a full-fledged, scalable platform. The text should be suitable for a landing page and have a maximum of 80 words. The language should be in ${translations[lang].langText}.`;
-                
-                try {
-                    const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                    const payload = { contents: chatHistory };
-                    const apiKey = "";
-                    const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=" + apiKey;
-
-                    // Adding a delay to simulate loading
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    const result = await response.json();
-                    const aiText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-                    if (aiText) {
-                        modalTitle.textContent = translations[lang].aiModalTitle;
-                        aiModalContent.textContent = aiText;
-                    } else {
-                        modalTitle.textContent = "Error";
-                        aiModalContent.textContent = "Error generating content. Please try again.";
-                    }
-                } catch (error) {
-                    console.error("Failed to fetch AI content:", error);
-                    modalTitle.textContent = "Error";
-                    aiModalContent.textContent = "An error occurred while fetching AI content. Please check the console for more details.";
-                } finally {
-                    aiLoadingIndicator.classList.add('hidden');
-                }
-            });
-
-            modalCloseBtn.addEventListener('click', () => {
-                aiModal.classList.add('hidden');
-            });
-
-            // Close modal when clicking outside
-            window.addEventListener('click', (event) => {
-                if (event.target === aiModal) {
-                    aiModal.classList.add('hidden');
-                }
-            });
 
             // Starfield animation script
             const canvas = document.getElementById('starfield');
