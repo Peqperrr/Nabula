@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NABULA - Your Discord Server. Redefined.</title>
+    <!-- Use a simple CDN to make the file fully self-contained -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        /* Base styles for font and body */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Nebula Background with fluid motion */
+        .nebula-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #000;
+            animation: nebula-movement 60s linear infinite;
+        }
+
+        /* Create the nebula effect using pseudo-elements */
+        .nebula-bg::before, .nebula-bg::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%),
+                        radial-gradient(circle, rgba(0, 200, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%),
+                        radial-gradient(circle, rgba(0, 150, 255, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+            animation: nebula-pulse 20s infinite ease-in-out;
+        }
+
+        .nebula-bg::before {
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+        }
+
+        .nebula-bg::after {
+            width: 120%;
+            height: 120%;
+            bottom: -10%;
+            right: -10%;
+            animation-delay: -10s;
+        }
+
+        /* Add subtle stars with background images */
+        .nebula-bg-stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image:
+                radial-gradient(1px 1px at 50% 50%, #fff, rgba(255, 255, 255, 0.5)),
+                radial-gradient(1px 1px at 30% 70%, #fff, rgba(255, 255, 255, 0.5)),
+                radial-gradient(1px 1px at 70% 30%, #fff, rgba(255, 255, 255, 0.5)),
+                radial-gradient(1px 1px at 20% 80%, #fff, rgba(255, 255, 255, 0.5)),
+                radial-gradient(1px 1px at 80% 20%, #fff, rgba(255, 255, 255, 0.5));
+            background-size: 4px 4px;
+            animation: twinkle 3s infinite alternate;
+        }
+
+        /* Keyframes for the background animations */
+        @keyframes nebula-movement {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
+        }
+        @keyframes nebula-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 0.6; }
+        }
+        @keyframes twinkle {
+            from { opacity: 0.8; }
+            to { opacity: 0.6; }
+        }
+        
+        /* Keyframes for the pulsating border animation */
+        @keyframes pulsating-border {
+            0%   { box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);   border-color: #ef4444; } /* Red */
+            25%  { box-shadow: 0 0 10px 5px rgba(139, 92, 246, 0.5); border-color: #8b5cf6; } /* Purple */
+            50%  { box-shadow: 0 0 10px 5px rgba(59, 130, 246, 0.5);  border-color: #3b82f6; } /* Blue */
+            75%  { box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); border-color: #ffffff; } /* White */
+            100% { box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);   border-color: #ef4444; } /* Back to Red */
+        }
+        
+        .pulsating-frame {
+            border: 2px solid;
+            animation: pulsating-border 5s linear infinite;
+        }
+
+        /* New: Pulsating text effect */
+        .pulsating-text {
+            border: none;
+            box-shadow: none;
+            animation: pulsating-border 5s linear infinite;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        /* Embed cool hover effect */
+        .embed-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Progress Bar Styling */
+        .progress-bar-container {
+            background-color: #2d3748;
+            border-radius: 9999px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            transition: width 0.5s ease-in-out;
+            border-radius: 9999px;
+            background-image: linear-gradient(to right, #6b46c1, #805ad5);
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a202c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #4a5568;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #718096;
+        }
+
+        /* Cool text shadow effect for headings */
+        .glow-text {
+            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+        }
+        
+        /* Language logo styling */
+        .lang-logo {
+            height: 24px;
+            width: auto;
+            transition: transform 0.2s ease-in-out;
+        }
+        .lang-logo:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-300 antialiased leading-relaxed">
+
+    <!-- The animated nebula background container -->
+    <div class="nebula-bg"></div>
+    <!-- Container for subtle star effects -->
+    <div class="nebula-bg-stars"></div>
+
+    <!-- Main content centered and with padding -->
+    <div class="flex flex-col items-center min-h-screen p-4 sm:p-8 space-y-12">
+
+        <!-- Header Section -->
+        <header class="text-center space-y-4">
+            <div class="pulsating-text rounded-2xl p-4">
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-wider">
+                    NABULA
+                </h1>
+            </div>
+            <p class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
+                The blueprint is complete, and the build has begun.
+            </p>
+            <p class="text-lg sm:text-xl text-cyan-400 font-semibold mt-2">
+                The next generation of Discord bots is here. Nabula is being built from the ground up to replace all other bots, giving your server members a fun, engaging, and active experience.
+            </p>
+        </header>
+
+        <!-- Separator -->
+        <div class="w-full h-px bg-gray-600 my-8"></div>
+
+        <!-- SYSTEM MODULES Section in its own pulsating frame -->
+        <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+            <section>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 glow-text">BOT FUNCTIONS // FEATURES & CAPABILITIES</h2>
+                <p class="text-gray-400 mb-6">All modules are fully configurable through an intuitive web dashboard.</p>
+                <ul class="space-y-6">
+                    <li class="border-b border-gray-700 pb-4 embed-item">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                                🔹 Temporary Voice Channels
+                            </h3>
+                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Allows members to dynamically create voice channels. The channel owner can manage limits, permissions, and visibility directly through a control panel sent to the voice chat upon creation.</p>
+                    </li>
+                    <li class="border-b border-gray-700 pb-4 embed-item">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                                🔹 Interactive Welcome Banners
+                            </h3>
+                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Generates personalized banners with buttons and GIFs. Every detail, from the template to the text, is customizable via the dashboard.</p>
+                    </li>
+                    <li class="border-b border-gray-700 pb-4 embed-item">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                                🔹 Dynamic Leveling System
+                            </h3>
+                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">An advanced XP protocol that rewards activity. XP rates, ranks, and automated role assignments are fully configured in the dashboard.</p>
+                    </li>
+                    <li class="border-b border-gray-700 pb-4 embed-item">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                                🛒 Nabula Shop & Economy
+                            </h3>
+                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Implements "NabCoins" and a shop for digital goods. Create and manage items, prices, and inventory directly from the dashboard.</p>
+                    </li>
+                    <li class="border-b border-gray-700 pb-4 embed-item">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                                🔹 Holodeck // Mini-Games
+                            </h3>
+                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Boosts server interaction with integrated games. Activate games and set wager limits for NabCoins through the dashboard.</p>
+                    </li>
+                    <li class="border-b border-gray-700 pb-4 embed-item">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                                🔹 GUARDIAN // Smart Moderation
+                            </h3>
+                            <p class="text-sm font-bold text-gray-500">[ ⚙️ IN DEVELOPMENT ]</p>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">An autonomous moderation agent with an adaptive word filter and anti-spam. All rules and filters are centrally managed in the dashboard.</p>
+                    </li>
+                    <li class="embed-item">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                            <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">
+                                💠 And many more modules are on the way...
+                            </h3>
+                            <p class="text-sm font-bold text-red-500">[CLASSIFIED]</p>
+                        </div>
+                        <p id="classified-module-container" class="text-gray-400 text-sm mt-2">The features listed are just the beginning. We're building some groundbreaking new systems that are still under wraps. // Stay tuned. It's going to be wild.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Separator -->
+        <div class="w-full h-px bg-gray-600 my-8"></div>
+
+        <!-- DEVELOPMENT LOG Section in its own pulsating frame -->
+        <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+            <section>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 glow-text">DEVELOPMENT LOG // Active Workstreams</h2>
+                <div class="space-y-8">
+                    <div class="embed-item">
+                        <h3 class="text-xl font-semibold text-cyan-400 mb-2">[ WEBSITE & DASHBOARD ]</h3>
+                        <p class="text-gray-400 text-sm">Building the web interface for bot configuration and analytics.</p>
+                        <div class="progress-bar-container mt-2">
+                            <div class="progress-bar" style="width: 30%;"></div>
+                        </div>
+                        <p class="text-right text-gray-500 text-xs mt-1">[ 30% ] > ███▒▒▒▒▒▒▒</p>
+                    </div>
+                    <div class="embed-item">
+                        <h3 class="text-xl font-semibold text-cyan-400 mb-2">[ DISCORD BOT & API ]</h3>
+                        <p class="text-gray-400 text-sm">Developing the core bot application, API, and database integration.</p>
+                        <div class="progress-bar-container mt-2">
+                            <div class="progress-bar" style="width: 40%;"></div>
+                        </div>
+                        <p class="text-right text-gray-500 text-xs mt-1">[ 40% ] > ████▒▒▒▒▒▒</p>
+                    </div>
+                    <div class="embed-item">
+                        <h3 class="text-xl font-semibold text-cyan-400 mb-2">[ CORE FUNCTIONS ]</h3>
+                        <p id="core-functions-log" class="text-gray-400 text-sm">Translating all feature blueprints into functional modules.</p>
+                        <div class="progress-bar-container mt-2">
+                            <div class="progress-bar" style="width: 25%;"></div>
+                        </div>
+                        <p class="text-right text-gray-500 text-xs mt-1">[ 25% ] > ██▒▒▒▒▒▒▒▒</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Separator -->
+        <div class="w-full h-px bg-gray-600 my-8"></div>
+
+        <!-- New section for team/collaboration -->
+        <div class="pulsating-frame max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+            <section class="text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 glow-text">COMMUNITY // Join the Team</h2>
+                <p class="text-lg text-gray-400 mb-4">
+                    NABULA is a passion project, and I'm currently the sole developer. What started as a hobby project has the potential to become something much bigger.
+                </p>
+                <p class="text-lg text-gray-400 mb-4">
+                    To make this platform a reality—to make it fully functional and accessible to the public—I'm looking for help to complete everything.
+                </p>
+                <p class="text-lg text-gray-400">
+                    I'm looking to build a dedicated team of creators and coders who share this vision. If you're passionate about redefining Discord servers and want to contribute to a groundbreaking project, let's build this future together.
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-6 mt-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript Logo" class="lang-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo" class="lang-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 Logo" class="lang-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo" class="lang-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++ Logo" class="lang-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" alt="Vue.js Logo" class="lang-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/120px-Java_programming_language_logo.svg.png" alt="Java Logo" class="lang-logo">
+                </div>
+            </section>
+        </div>
+
+        <!-- Separator -->
+        <div class="w-full h-px bg-gray-600 my-8"></div>
+
+        <!-- VISUAL SKINS Section -->
+        <div class="max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+            <section>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 glow-text">VISUAL SKINS // UI Themes</h2>
+                <p class="text-gray-400 mb-6">Customize Nabula's visual output to match your community's aesthetic.</p>
+                <ul id="visual-skins-list" class="space-y-4 text-cyan-400 font-light text-lg">
+                    <li class="embed-item"><span class="text-purple-400">🎨 [ NeoDark ]</span> — Futuristic & clean.</li>
+                    <li class="embed-item"><span class="text-purple-400">🎨 [ CrystalLight ]</span> — Bright & modern.</li>
+                    <li class="embed-item"><span class="text-purple-400">🎨 [ RetroWave ]</span> — Pulsating 80s synthwave vibes.</li>
+                    <li class="embed-item"><span class="text-purple-400">🎨 [ Midnight Nebula ]</span> — Elegant starry skies & galaxies.</li>
+                    <li class="embed-item"><span class="text-purple-400">🎨 [ Minimal Clean ]</span> — Reduced to the absolute essentials.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Separator -->
+        <div class="w-full h-px bg-gray-600 my-8"></div>
+
+        <!-- LICENSE Section -->
+        <div class="max-w-4xl w-full bg-black bg-opacity-70 backdrop-blur-md rounded-2xl border border-gray-700 shadow-lg p-6 sm:p-10 space-y-12">
+            <footer class="text-center">
+                <h2 class="text-xl font-bold text-white mb-2 glow-text">License</h2>
+                <p class="text-gray-400">This project is released under the Apache License 2.0.</p>
+                <img src="https://www.apache.org/images/asf_logo_wide_2017.svg" alt="Apache Software Foundation Logo" class="w-48 mx-auto mt-4 filter grayscale opacity-75">
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
