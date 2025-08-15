@@ -1,25 +1,33 @@
 <div align="center">.
-<br>
-<img src="https://i.imgur.com/y5HjEGE.png" alt="Nabula Logo" width="300" style="border-radius: 60%
-<br><br>
-
-
-
+<br>   
+    <img src="https://github.com/Peqperrr/Peqperrr/blob/main/standard.gif?raw=true" alt="Banner" width="90%" />
+<hr>
 <div align="center">
-
-# 🌌 Nabula 🌌
-
+</p>
 
 <br>
-
 <a href="https://peqperrr.github.io/Nabula/">
-    <img src="https://img.shields.io/badge/Nabula Info Website press here-5865F2?style=for-the-badge&logo=rocket&logoColor=white" alt="Nabula Webseite" width="50%">
+    <img src="https://img.shields.io/badge/Nabula Info Website press here-5865F2?style=REDfor-the-badge&logo=rocket&logoColor=NEONGREEN" alt="Nabula Webseite" width="50%">
 </a>
 <br>
 
 *<p>🚀 To see and test all features live, visit our website using the big button above! 🚀</p>*
-<br> 🌠 Connect with Our Universe 🌠
+<br> 
 <hr>
+</a>
+<div class="flex flex-wrap justify-center items-center gap-4 mt-8">
+    <a href="https://discord.com/oauth2/authorize?client_id=1372816649794879558">
+  <img src="https://img.shields.io/badge/Invite-Nabula-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Invite Nabula Badge" />
+      <br>  
+  <a href="https://discord.com/oauth2/authorize?client_id=1372816649794879558">
+    <a href="https://discord.com/users/592823845673631936">
+    <img src="https://img.shields.io/badge/Discord-Peqperrr%237777-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Discord Badge" />
+        <br>
+  <a href="https://discord.gg/GK6pHmNMpd">
+    <img src="https://img.shields.io/badge/Discord-Join%20our%20Server-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Discord Badge" />
+                
+<hr>
+</a>
 
 
 ## 🚀 Features
@@ -32,8 +40,8 @@
 | **🌌** | **Galactic Design** | A unique and stylish user interface inspired by the universe. |
 
 <br>
-
 <hr>
+
 
 ## 🛠️ Building it With
 
@@ -67,24 +75,14 @@
 ## ✨ Contact me if you would like to join.
 
 
-
-
 Thank you for exploring Nabula! We appreciate your support and look forward to seeing you in our community.
 
 
 </div>
 <div align="center">
-<a href="https://discord.gg/GK6pHmNMpd">
-    <img src="https://img.shields.io/badge/Join Our Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord Server">
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://discord.com/oauth2/authorize?client_id=1372816649794879558">
-    <img src="https://img.shields.io/badge/Nabula Profile-1e3a5f?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDg2IDIgMiA2LjQ4NiAyIDEyczQuNDg2IDEwIDEwIDEwIDEwLTQuNDg2IDEwLTEwUzE3LjUxNCAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4IDggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA6YzEuNjU0IDAgMyAxLjM0NiAzIDNzLTEuMzQ2IDMtMyAzLTMtMS4zNDYtMy0zIDEuMzQ2LTMgMy0zem0wIDhjLTIuNzU3IDAtNSAyLjI0My01IDV2MWg0di0yYzAtLjU1Mi40NDktMSAxLTFzMSAuNDQ4IDEgMXYyaDR2LTFjMC0yLjc1Ny0yLjI0My01LTUtNXoiLz48L3N2Zz4=" alt="Nabula Profile">
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://discord.com/users/123456789012345678">
-    <img src="https://img.shields.io/badge/My Discord Profile-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="My Discord Profile">
-  </a>
+
+    
+  
 <hr>
 <div align="center">
 
