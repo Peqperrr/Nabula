@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/peqperrr/Nabula/main/assets/logo.png" width="160" alt="Nabula Logo" style="border-radius:50%">
+<img src="https://files.fm/u/a8qjb76e48" width="160" alt="Nabula Logo" style="border-radius:50%; margin-bottom:20px;">
 
----
-
-# 🌌 **NABULA ©️**  
+#  **NABULA**
 ### *Your Discord Server. Redefined.*
 
 > **The blueprint is complete. The build has begun.**  
@@ -21,18 +19,14 @@
 
 </div>
 
-## ✨ Overview
-Nabula is not just a Discord bot – it’s a **modular ecosystem**.  
-From intelligent moderation to dynamic voice channels, **every feature** is fully customizable via an elegant web dashboard.
-
 ---
 
-## 🛠 **SYSTEM MODULES // Implementation Phase**
+## 🛠 **System Modules**
 *All modules are fully configurable through an intuitive web dashboard.*
 
 | Module | Description | Status |
 |--------|-------------|--------|
-| 🔹 **Temporary Voice Channels** | Create dynamic voice rooms with full control over permissions, limits, and visibility. | ![Status](https://img.shields.io/badge/IN_DEVELOPMENT-yellow?style=for-the-badge) |
+| 🔹 **Temporary Voice Channels** | Dynamic voice rooms with full control over permissions, limits, and visibility. | ![Status](https://img.shields.io/badge/IN_DEVELOPMENT-yellow?style=for-the-badge) |
 | 🔹 **Interactive Welcome Banners** | Personalized GIF & button banners with full customization. | ![Status](https://img.shields.io/badge/IN_DEVELOPMENT-yellow?style=for-the-badge) |
 | 🔹 **Dynamic Leveling System** | Advanced XP protocol with ranks & automated roles. | ![Status](https://img.shields.io/badge/IN_DEVELOPMENT-yellow?style=for-the-badge) |
 | 🛒 **Nabula Shop & Economy** | "NabCoins" currency & item shop system. | ![Status](https://img.shields.io/badge/IN_DEVELOPMENT-yellow?style=for-the-badge) |
@@ -42,34 +36,20 @@ From intelligent moderation to dynamic voice channels, **every feature** is full
 
 ---
 
-## 🎨 **VISUAL SKINS // UI Themes**
-> Make Nabula look like *your* community. Choose from multiple professional-grade themes.
-
-- 🎨 **NeoDark** — Futuristic & clean  
-- 🎨 **CrystalLight** — Bright & modern  
-- 🎨 **RetroWave** — Pulsating 80s synthwave vibes  
-- 🎨 **Midnight Nebula** — Starry sky elegance  
-- 🎨 **Minimal Clean** — Absolute essentials only  
-
----
-
-## 📈 **DEVELOPMENT LOG // Active Workstreams**
+## 📈 **Development Log**
 
 **Website & Dashboard**  
-`███▒▒▒▒▒▒▒ 30%`  
 ![Progress](https://progress-bar.dev/30/?width=300&title=Dashboard)
 
 **Discord Bot & API**  
-`████▒▒▒▒▒▒ 40%`  
 ![Progress](https://progress-bar.dev/40/?width=300&title=Bot+Core)
 
 **Core Functions**  
-`██▒▒▒▒▒▒▒▒ 25%`  
 ![Progress](https://progress-bar.dev/25/?width=300&title=Modules)
 
 ---
 
-## 📜 License
+## 📜 **License**
 [![License](https://img.shields.io/badge/License-Apache_2.0-1E90FF?style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)  
 Released under the **Apache License 2.0**.
 
@@ -81,8 +61,8 @@ Released under the **Apache License 2.0**.
 
 ---
 
-## 🌐 Links
-- **Website:** [Nabula Dashboard](https://peqperrr.github.io/Nabula/)  
+## 🌐 **Links**
+- **Nabula Info:** [Nabula Dashboard](https://peqperrr.github.io/Nabula/)  
 - **GitHub Repo:** [Nabula on GitHub](https://github.com/peqperrr/Nabula)  
 - **Discord Invite:** *Coming Soon*
 
