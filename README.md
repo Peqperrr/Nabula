@@ -16,9 +16,15 @@
 <hr>
 </a>
 <div class="flex flex-wrap justify-center items-center gap-4 mt-8">
-    <a href="https://discord.com/oauth2/authorize?client_id=1372816649794879558">
-  <img src="https://img.shields.io/badge/Invite-Nabula-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Invite Nabula Badge" />
-      <br>  
+   <a
+<hr>
+        
+## ✨ Contact me if you would like to join.
+<a
+href="https://discord.com/oauth2/authorize?client_id=1372816649794879558">
+       <br>
+<img src="https://img.shields.io/badge/Invite-Nabula-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Invite Nabula Badge" />
+      <br> 
   <a href="https://discord.com/oauth2/authorize?client_id=1372816649794879558">
     <a href="https://discord.com/users/592823845673631936">
     <img src="https://img.shields.io/badge/Discord-Peqperrr%237777-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Discord Badge" />
@@ -71,8 +77,6 @@
 
 
 <hr>
-
-## ✨ Contact me if you would like to join.
 
 
 Thank you for exploring Nabula! We appreciate your support and look forward to seeing you in our community.
