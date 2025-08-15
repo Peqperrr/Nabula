@@ -1,4 +1,4 @@
-/**
+/*
  * @file Manages temporary voice channels for a Discord server.
  * @author Maik
  * @version 1.0.0
@@ -6,12 +6,11 @@
 
 // Import required discord.js modules.
 const { Events, ChannelType, PermissionFlagsBits } = require('discord.js');
+// Import the professional logger
+const { LoggerUtils } = require('./api/logger.utils.js');
 
-// Simple console logger.
-const logger = {
-    info: (message) => console.log(`[INFO] [TempChannels] ${message}`),
-    error: (message, error) => console.error(`[ERROR] [TempChannels] ${message}`, error),
-};
+// Create a logger instance for this specific module
+const logger = new LoggerUtils('TempChannels');
 
 /**
  * Manages the creation and deletion of temporary voice channels.
@@ -218,4 +217,3 @@ class TempChannelsModule {
 
 // Export the class for use in other files.
 module.exports = TempChannelsModule;
-

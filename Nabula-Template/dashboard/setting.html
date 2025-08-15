@@ -1,0 +1,105 @@
+/**
+ * @author Maik
+ * @version 1.0.0
+ */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NABULA Settings - Galactic Control Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Corrected Link -->
+</head>
+<body>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">NABULA<span class="logo-glow">™</span></div>
+            
+            <nav class="main-nav">
+                <a href="#dashboard" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+                <a href="temp-channels.html" class="nav-item">
+                    <span class="nav-icon">🎤</span>
+                    <span class="nav-label">Temp Channels</span>
+                </a>
+                <!-- Add other nav items here -->
+                <a href="setting.html" class="nav-item active">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-label">Settings</span>
+                </a>
+                <a href="index.html" class="nav-item logout">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-label">Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="server-select">
+                    <select class="server-dropdown">
+                        <option value="server1">My Main Server</option>
+                        <option value="server2">Second Server</option>
+                    </select>
+                </div>
+                
+                <div class="user-profile">
+                    <div class="notification-bell">
+                        <span class="bell-icon">🔔</span>
+                        <span class="notification-count">3</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="https://i.pravatar.cc/150?u=nabula_user" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Settings Overview -->
+            <section class="page-content">
+                <h1 class="page-title">Settings</h1>
+                
+                <div class="settings-grid">
+                    <!-- General Settings Card -->
+                    <div class="settings-card">
+                        <div class="settings-card-header">
+                            <div class="settings-card-icon">🔧</div>
+                            <h2 class="settings-card-title">General Settings</h2>
+                        </div>
+                        <div class="settings-card-body">
+                            <div class="form-group">
+                                <label>Bot Prefix</label>
+                                <div class="input-group">
+                                    <input type="text" value="n.">
+                                    <button class="save-button">Save</button>
+                                </div>
+                                <p>Change the default prefix for text commands.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Default Language</label>
+                                <select>
+                                    <option value="en">English</option>
+                                    <option value="de">German</option>
+                                </select>
+                                <p>Choose the default language for the bot.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more settings cards as needed -->
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
