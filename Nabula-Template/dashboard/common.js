@@ -1,7 +1,9 @@
-/**
+/*
  * NABULA Common Functions
  * This file contains all common functions for the NABULA template's
  * and can be used by any HTML page.
+ * @author Maik
+ * @version 1.0.0
  */
 
 document.addEventListener('DOMContentLoaded', function() {

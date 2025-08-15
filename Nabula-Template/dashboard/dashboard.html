@@ -1,0 +1,83 @@
+/**
+ * @author Maik
+ * @version 1.0.0
+ */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NABULA Dashboard - Galactic Overview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">NABULA<span class="logo-glow">™</span></div>
+            
+            <nav class="main-nav">
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+                <a href="temp-channels.html" class="nav-item">
+                    <span class="nav-icon">🎤</span>
+                    <span class="nav-label">Temp Channels</span>
+                </a>
+                <!-- Add other nav items here -->
+                <a href="setting.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-label">Settings</span>
+                </a>
+                <a href="index.html" class="nav-item logout">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-label">Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="server-select">
+                    <select class="server-dropdown" id="server-selector">
+                        <option value="server1">My Main Server</option>
+                        <option value="server2">Second Server</option>
+                    </select>
+                </div>
+                
+                <div class="user-profile">
+                    <div class="notification-bell">
+                        <span class="bell-icon">🔔</span>
+                        <span class="notification-count">3</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="https://i.pravatar.cc/150?u=nabula_user" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Overview -->
+            <section class="page-content">
+                <h1 class="page-title">Server Overview</h1>
+                
+                <!-- Stats Grid -->
+                <div class="settings-grid" id="stats-grid">
+                    <!-- Stat cards will be dynamically inserted here by dashboard.js -->
+                    <div class="settings-card">Loading stats...</div>
+                </div>
+
+                <!-- More sections can be added here, e.g., for charts or recent activity -->
+
+            </section>
+        </main>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
