@@ -85,8 +85,9 @@ Thank you for exploring Nabula! We appreciate your support and look forward to s
 </div>
 <div align="center">
 
-[Nabula HomePage](nabulaweeeeb.png)    
-  
+[Nabula HomePage](https://github.com/Peqperrr/Nabula-Bot/blob/d4df726773958907f90659a4ad158ad271694e6f/nabulaweeeeb.png)   
+
+[Nabula Dashboard](https://github.com/Peqperrr/Nabula-Bot/blob/d0ac23a8cb76afebc37c0487ec0b99e14ea2453a/ttttttt.jpeg)
 <hr>
 <div align="center">
 
