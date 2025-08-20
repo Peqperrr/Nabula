@@ -2,7 +2,6 @@
  * @author Maik
  * @version 1.0.0
  */
-
 // bot/index.js
 require("dotenv").config();
 const {
